@@ -1,37 +1,103 @@
-package pom.util;
+package pom.util.hellper;
 
 import io.appium.java_client.AppiumBy;
+import lombok.Setter;
 import org.openqa.selenium.WebElement;
-import test.automation.base.AppiumBaseTest;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import pom.base.AppiumBaseTest;
 
-public class appium_helper extends AppiumBaseTest {
+import java.time.Duration;
+
+@Setter
+public class AppiumHelper extends AppiumBaseTest implements UserInterfaceHelper {
     //    All of this methods are little helpers for me to not write some code again and again
-    public WebElement findById(String id){
+
+    private short maxSecondsOfWait = 20;
+
+    @Override
+    public WebElement findById(String id) {
         return driver.findElement(AppiumBy.id(id));
     }
 
-    public WebElement findByXpath(String xpath){
-        return driver.findElement(AppiumBy.xpath(xpath));
+    @Override
+    public WebElement findByXpath(String xpath) {
+
+        return waitFor(driver.findElement(AppiumBy.xpath(xpath)));
     }
 
     //    here is overload example BTW :D
-    public void click(WebElement element){
-        element.click();
+    @Override
+    public void click(WebElement element) {
+        waitFor(element).click();
     }
 
-    public void click(String id){
-        driver.findElement(AppiumBy.id(id)).click();
+    @Override
+    public void click(String selector) {
+        WebElement element = driver.findElement(AppiumBy.id(selector));
+        waitFor(element).click();
     }
 
-    public String text_of(String id){
-        return driver.findElement(AppiumBy.id(id)).getText();
+    @Override
+    public String text_of(String id) {
+        WebElement element = driver.findElement(AppiumBy.id(id));
+        return waitFor(element).getText();
     }
 
-    public void type(String id ,String text){
-        driver.findElement(AppiumBy.id(id)).sendKeys(text);
+    @Override
+    public void type(String id, String text) {
+        waitFor(driver.findElement(AppiumBy.id(id))).sendKeys(text);
     }
 
-    public boolean isDisplayed(String id){
-        return driver.findElement(AppiumBy.id(id)).isDisplayed();
+    @Override
+    public boolean isDisplayed(String id) {
+        WebElement element = driver.findElement(AppiumBy.id(id));
+
+        return waitFor(element).isDisplayed();
+    }
+
+    @Override
+    public boolean isNotDisplayed(String id) {
+        WebElement element = driver.findElement(AppiumBy.id(id));
+
+        return !element.isDisplayed();
+    }
+
+    @Override
+    public boolean isDisplayed(String id, int maxSeconds) {
+        WebElement element = driver.findElement(AppiumBy.id(id));
+
+        return waitFor(element).isDisplayed();
+    }
+
+    @Override
+    public boolean isNotDisplayed(String id, int maxSeconds) {
+        WebElement element = driver.findElement(AppiumBy.id(id));
+
+        return !element.isDisplayed();
+    }
+
+    @Override
+    public WebElement waitFor(WebElement element, int maxSeconds) {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(maxSeconds));
+        return wait.until(ExpectedConditions.visibilityOf(element));
+
+    }
+
+
+    @Override
+    public WebElement waitFor(WebElement element) {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(maxSecondsOfWait));
+        return wait.until(ExpectedConditions.visibilityOf(element));
+
+    }
+
+    @Override
+    public void waitTimeOut(int waitOfSeconds) {
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitOfSeconds));
+
     }
 }
