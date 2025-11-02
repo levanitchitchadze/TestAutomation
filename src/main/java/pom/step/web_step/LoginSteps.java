@@ -1,4 +1,4 @@
-package pom.step.api_step;
+package pom.step.web_step;
 
 public class LoginSteps {
 }

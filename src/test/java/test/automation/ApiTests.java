@@ -1,4 +1,4 @@
-package automation;//package test.automation;
+package test.automation;//package test.automation;
 //
 //import org.testng.annotations.Test;
 //
