@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<suite name="app" parrallel="test" Thread-count="2">
+    <test name="android">
+        <parameter name="platform" value="android"/>
+        <classes name="AuthenticationAndroid">
+            <class name="test.automation.LoginTest"/>
+            <class name="core.utils.smsMessages.OTPCode"/>
+        </classes>
+    </test>
+    <test name="ios">
+        <parameter name="platform" value="ios"/>
+        <classes name="AuthenticationIOS">
+            <class name="test.automation.LoginTest"/>
+            <class name="core.utils.smsMessages.OTPCode"/>
+        </classes>
+    </test>
+    <test name="web">
+        <parameter name="platform" value="web"/>
+        <classes name="AuthenticationWeb">
+            <class name="test.automation.LoginTest"/>
+        </classes>
+    </test>
+    <test name="api">
+        <parameter name="platform" value="api"/>
+        <classes name="AuthenticationApi">
+            <class name="test.automation.LoginTest"/>
+        </classes>
+    </test>
+</suite>
