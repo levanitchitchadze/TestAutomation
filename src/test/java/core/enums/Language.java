@@ -1,4 +1,4 @@
-package core.data.app;
+package core.enums;
 
 public enum Language {
     GEO,

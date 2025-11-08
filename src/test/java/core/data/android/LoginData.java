@@ -1,6 +1,7 @@
-package core.data.app;
+package core.data.android;
 
 
+import io.github.cdimascio.dotenv.Dotenv;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,8 +11,8 @@ import lombok.Setter;
 @Setter
 public class LoginData {
 
-    private String username = "";
-    private String password = "";
+    private String username = Dotenv.load().get("username");
+    private String password = Dotenv.load().get("password");
 
 
 }

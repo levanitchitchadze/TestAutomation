@@ -1,7 +1,7 @@
-package core.steps.app;
+package core.steps.ios;
 
-import core.data.app.Language;
-import core.model.app.LoginPage;
+import core.enums.Language;
+import core.model.android.LoginPage;
 import core.steps.common.ILoginSteps;
 import core.utils.hellper.AppiumHelper;
 

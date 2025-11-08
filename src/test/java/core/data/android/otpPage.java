@@ -1,4 +1,4 @@
-package core.data.app;
+package core.data.android;
 
 public class otpPage {
 

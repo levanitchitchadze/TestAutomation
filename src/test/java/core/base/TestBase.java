@@ -1,77 +1,33 @@
 package core.base;
 
-import core.data.app.VirtualDeviceConfig;
+import core.factories.steps.StepsFactory;
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
-
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.time.Duration;
 
 
 public class TestBase {
     protected static AndroidDriver androidDriver;
-    private IPlatformFactory IPlatformFactory;
-    private PlatformContext platformContext;
+    protected IPlatformAbstractFactory iPlatformAbstractFactory;
+    protected PlatformContext context;
+    protected StepsFactory stepsFactory;
+    protected PageFactory pageFactory;
 
-
-    @BeforeClass
+    @BeforeTest
     @Parameters({"platform"})
-    public void setUpDriver() {
-//        The DesiredCapabilities class helps us specify which parametrs our program should run with
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        VirtualDeviceConfig deviceConfig = new VirtualDeviceConfig();
+    public void setUp(String platform) {
+        context = PlatformContextBuilder.build(platform);
+        stepsFactory = new StepsFactory();
 
-//        And there is parameters
-        capabilities.setCapability("platformName", deviceConfig.getPLATFORM_NAME());
-        capabilities.setCapability("appium:automationName", deviceConfig.getAUTOMATION_NAME());
-        capabilities.setCapability("appium:deviceName", deviceConfig.getDEVICE_NAME());
-//        I can download .apk or .ipa file and run to emulator.
-//        I don't have Macbook so not actually :D
-//        capabilities.setCapability("appium:app",  System.getProperty("user.dir") + "/src/main/java/pom/data/test_object/apk/ApiDemos-debug.apk");
-
-//        If I want to not remove app data before use
-//        capabilities.setCapability("noReset", true);
-
-//        App package name I want to test (already installed app from PlayStore)
-        capabilities.setCapability("appPackage", deviceConfig.getAPP_PACKAGE());
-//        also we need to run package so I set activity name
-        capabilities.setCapability("appActivity", deviceConfig.getAPP_ACTIVITY());
-
-//        Here i create URL to pass android driver and connect to appium server
-        var uri = getURL(deviceConfig.getURL());
-        androidDriver = new AndroidDriver(uri, capabilities);
-
-//        Here is some wait before program connect to server
-        androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-
-//        P.S: It's not AI comments :D
+        pageFactory = new PageFactory();
 
     }
 
-    private URL getURL(String urlString) {
-        try {
-            return new URI(urlString).toURL();
-
-        } catch (URISyntaxException | MalformedURLException urle) {
-            System.out.println("Not valid url String" + urle.getMessage());
-            return null;
-        }
-    }
-
-    public void rerunApplication() {
-        androidDriver.close();
-        setUpDriver();
-    }
 
     //    The tearDown method closes the driver no mether what, otherwise it may cause problems for the next run.
-    @AfterClass(alwaysRun = true)
+    @AfterTest(alwaysRun = true)
     public void tearDown() {
         if (androidDriver != null) {
             androidDriver.quit();

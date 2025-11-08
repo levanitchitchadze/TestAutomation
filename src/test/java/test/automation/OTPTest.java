@@ -1,6 +1,6 @@
 package test.automation;
 
-import core.data.app.PhysicalDeviceConfig;
+import core.data.android.PhysicalDeviceConfig;
 import core.utils.smsMessages.OTPCode;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.testng.annotations.BeforeClass;

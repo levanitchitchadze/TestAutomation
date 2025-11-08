@@ -1,4 +1,4 @@
-package core.model.app;
+package core.model.android;
 
 public class PaymentPage {
 }
