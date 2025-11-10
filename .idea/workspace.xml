@@ -5,40 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="920f9a61-8e90-4d0e-85ac-a1e914a82eab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/data/api/BaseData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/drivers/ApiClientProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/factories/pages/AndroidPagesFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/factories/pages/ApiPagesFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/factories/pages/IosPagesFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/factories/pages/PageFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/factories/pages/WebPagesFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/factories/steps/IosStepsFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/factories/steps/StepsFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/ios/LoginSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/ios/PaymentSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/base/IPlatformFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/IPlatformAbstractFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/base/PlatformContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/PlatformContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/base/PlatformContextBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/PlatformContextBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/base/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/app/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/enums/Language.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/app/LoginData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/android/LoginData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/app/PhysicalDeviceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/android/PhysicalDeviceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/app/VirtualDeviceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/android/VirtualDeviceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/app/otpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/android/otpPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidDriverProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidDriverProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/IosDriverProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/IosDriverProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/WebDriverProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/WebDriverProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/IApiFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/steps/ApiStepsFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/IAppFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/steps/AndroidStepsFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/IWebFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/steps/WebStepsFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/app/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/model/android/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/app/PaymentPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/model/android/PaymentPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/app/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/LoginSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/app/PaymentSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/PaymentSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/messages/error/TestFailMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/messages/error/TestFailMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/hellper/AppiumHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/hellper/AppiumHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/OTPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/OTPTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/TestAsync.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +76,9 @@
     "TestNG.LoginTest.executor": "Run",
     "TestNG.OTPTest.executor": "Run",
     "TestNG.TestAsync.CompletableFutureCreation.executor": "Run",
+    "TestNG.TestAsync.executor": "Run",
     "TestNG.TestAsync.reactiveStreamsCreation.executor": "Run",
+    "TestNG.TestAsync.testArrays.executor": "Run",
     "TestNG.TestAsync.threadCreation.executor": "Run",
     "TestNG.WebAppTests (1).executor": "Run",
     "TestNG.WebAppTests.executor": "Run",
@@ -115,7 +87,7 @@
     "TestNG.testng.executor": "Run",
     "git-widget-placeholder": "Dev",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/levan/Documents/GitHub/Portfolio/Portfolio/src/test/java/core/factories/pages",
+    "last_opened_file_path": "/home/levan/Documents/GitHub/CodeWars",
     "onboarding.tips.debug.path": "/home/levan/Documents/GitHub/Portfolio/Portfolio/test_automation/src/main/java/test/automation/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -151,17 +123,17 @@
       <recent name="test.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestAsync.reactiveStreamsCreation">
-    <configuration name="OTPTest" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.TestAsync">
+    <configuration name="TestAsync" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Portfolio" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.automation.app_test.*" />
+          <option name="PATTERN" value="test.automation.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.automation.app_test" />
-      <option name="MAIN_CLASS_NAME" value="test.automation.app_test.OTPTest" />
+      <option name="PACKAGE_NAME" value="test.automation" />
+      <option name="MAIN_CLASS_NAME" value="test.automation.TestAsync" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -205,6 +177,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestAsync.testArrays" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Portfolio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.automation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.automation" />
+      <option name="MAIN_CLASS_NAME" value="test.automation.TestAsync" />
+      <option name="METHOD_NAME" value="testArrays" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestAsync.threadCreation" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Portfolio" />
       <extension name="coverage">
@@ -217,16 +207,6 @@
       <option name="MAIN_CLASS_NAME" value="test.automation.app_test.TestAsync" />
       <option name="METHOD_NAME" value="threadCreation" />
       <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="/home/levan/Documents/GitHub/Portfolio/Portfolio/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Portfolio" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
@@ -256,19 +236,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.testng" />
+      <item itemvalue="TestNG.TestAsync" />
+      <item itemvalue="TestNG.TestAsync.testArrays" />
       <item itemvalue="TestNG.TestAsync.CompletableFutureCreation" />
       <item itemvalue="TestNG.TestAsync.reactiveStreamsCreation" />
       <item itemvalue="TestNG.TestAsync.threadCreation" />
-      <item itemvalue="TestNG./home/levan/Documents/GitHub/Portfolio/Portfolio/testng.xml" />
-      <item itemvalue="TestNG.OTPTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestAsync" />
+        <item itemvalue="TestNG.TestAsync.testArrays" />
         <item itemvalue="TestNG.TestAsync.reactiveStreamsCreation" />
         <item itemvalue="TestNG.TestAsync.CompletableFutureCreation" />
         <item itemvalue="TestNG.TestAsync.threadCreation" />
-        <item itemvalue="TestNG./home/levan/Documents/GitHub/Portfolio/Portfolio/testng.xml" />
-        <item itemvalue="TestNG.OTPTest" />
       </list>
     </recent_temporary>
   </component>

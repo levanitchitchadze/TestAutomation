@@ -17,13 +17,13 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
 
     @Override
     public WebElement findById(String id) {
-        return driver.findElement(AppiumBy.id(id));
+        return androidDriver.findElement(AppiumBy.id(id));
     }
 
     @Override
     public WebElement findByXpath(String xpath) {
 
-        return waitFor(driver.findElement(AppiumBy.xpath(xpath)));
+        return waitFor(androidDriver.findElement(AppiumBy.xpath(xpath)));
     }
 
     //    here is overload example BTW :D
@@ -34,45 +34,45 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
 
     @Override
     public void click(String selector) {
-        WebElement element = driver.findElement(AppiumBy.id(selector));
+        WebElement element = androidDriver.findElement(AppiumBy.id(selector));
         waitFor(element).click();
     }
 
     @Override
     public String text_of(String id) {
-        WebElement element = driver.findElement(AppiumBy.id(id));
+        WebElement element = androidDriver.findElement(AppiumBy.id(id));
         return waitFor(element).getText();
     }
 
     @Override
     public void type(String id, String text) {
-        waitFor(driver.findElement(AppiumBy.id(id))).sendKeys(text);
+        waitFor(androidDriver.findElement(AppiumBy.id(id))).sendKeys(text);
     }
 
     @Override
     public boolean isDisplayed(String id) {
-        WebElement element = driver.findElement(AppiumBy.id(id));
+        WebElement element = androidDriver.findElement(AppiumBy.id(id));
 
         return waitFor(element).isDisplayed();
     }
 
     @Override
     public boolean isNotDisplayed(String id) {
-        WebElement element = driver.findElement(AppiumBy.id(id));
+        WebElement element = androidDriver.findElement(AppiumBy.id(id));
 
         return !element.isDisplayed();
     }
 
     @Override
     public boolean isDisplayed(String id, int maxSeconds) {
-        WebElement element = driver.findElement(AppiumBy.id(id));
+        WebElement element = androidDriver.findElement(AppiumBy.id(id));
 
         return waitFor(element).isDisplayed();
     }
 
     @Override
     public boolean isNotDisplayed(String id, int maxSeconds) {
-        WebElement element = driver.findElement(AppiumBy.id(id));
+        WebElement element = androidDriver.findElement(AppiumBy.id(id));
 
         return !element.isDisplayed();
     }
@@ -80,7 +80,7 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
     @Override
     public WebElement waitFor(WebElement element, int maxSeconds) {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(maxSeconds));
+        WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(maxSeconds));
         return wait.until(ExpectedConditions.visibilityOf(element));
 
     }
@@ -89,7 +89,7 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
     @Override
     public WebElement waitFor(WebElement element) {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(maxSecondsOfWait));
+        WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(maxSecondsOfWait));
         return wait.until(ExpectedConditions.visibilityOf(element));
 
     }
@@ -97,7 +97,7 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
     @Override
     public void waitTimeOut(int waitOfSeconds) {
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitOfSeconds));
+        androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitOfSeconds));
 
     }
 }
