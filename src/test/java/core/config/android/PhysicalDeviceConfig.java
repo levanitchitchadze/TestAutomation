@@ -1,4 +1,4 @@
-package core.data.android;
+package core.config.android;
 
 import lombok.Getter;
 

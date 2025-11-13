@@ -8,24 +8,25 @@ import java.io.InputStreamReader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class OTPCode {
+public class MessageReader {
 
     private static final String url = "content://sms/inbox";
-    private static String latestRowsCount = "1";
-    private String deviceSerialNumber;
-    private AppiumHelper appiumHelper = new AppiumHelper();
+    private final String deviceSerialNumber;
+    private AppiumHelper appiumHelper;
 
-    public OTPCode(String deviceSerialNumber) {
+
+    public MessageReader(String deviceSerialNumber, AppiumHelper appiumHelper) {
         this.deviceSerialNumber = deviceSerialNumber;
+        this.appiumHelper = appiumHelper;
     }
 
 
-    public String getOTPCode(String filterBy, String sortBy, String regexString) {
-
-        // adb -s adb-18e7eb0c-h4OLO1._adb-tls-connect._tcp shell content query --uri content://sms/inbox --projection body --sort \"date DESC\" | grep 'tbconline an tibisis mobilur aplikaciashi' | head -n 10
+    public String getOTPCode(String filterBy, String sortBy) {
 
         checkIfOTPReceived(sortBy, filterBy);
+        String regexString = "\\b(\\d{4,8})\\b";
 
+        String latestRowsCount = "1";
         String command = String.format(
                 "adb -s %s shell content query --uri %s --projection body --sort \\\"%s DESC\\\" | grep '%s' | head -n %s",
                 deviceSerialNumber, url, sortBy, filterBy, latestRowsCount);

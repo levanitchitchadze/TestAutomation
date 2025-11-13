@@ -1,6 +1,7 @@
 package core.drivers;
 
-import core.data.android.VirtualDeviceConfig;
+import core.config.android.VirtualDeviceConfig;
+import core.config.appium.AppiumServerManager;
 import core.utils.messages.error.TestFailMessages;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -15,10 +16,9 @@ public class AndroidDriverProvider {
 
     private static AndroidDriver androidDriver;
 
-    public static AndroidDriver getDriver() {
+    public static synchronized AndroidDriver getDriver() {
         if (androidDriver == null) {
             androidDriver = create();
-            return androidDriver;
         }
 
         return androidDriver;
@@ -33,8 +33,9 @@ public class AndroidDriverProvider {
         capabilities.setCapability("platformName", deviceConfig.getPLATFORM_NAME());
         capabilities.setCapability("appium:automationName", deviceConfig.getAUTOMATION_NAME());
         capabilities.setCapability("appium:deviceName", deviceConfig.getDEVICE_NAME());
+
 //        I can download .apk or .ipa file and run to emulator.
-//        I don't have Macbook so not actually :D
+//        I don't have Macbook so not actually can run .ipa file:D
 //        capabilities.setCapability("appium:app",  System.getProperty("user.dir") + "/src/main/java/pom/data/test_object/apk/ApiDemos-debug.apk");
 
 //        If I want to not remove app data before use
@@ -46,14 +47,15 @@ public class AndroidDriverProvider {
         capabilities.setCapability("appActivity", deviceConfig.getAPP_ACTIVITY());
 
 //        Here i create URL to pass android driver and connect to appium server
-        URL uri = getURL(deviceConfig.getURL());
+//        URL uri = getURL(deviceConfig.getURL());
 
+        URL uri = AppiumServerManager.startAppiumServer(new VirtualDeviceConfig());
         assert uri != null : TestFailMessages.DRIVER_URL_CANT_BE_NULL;
 
         androidDriver = new AndroidDriver(uri, capabilities);
 
 //        Here is some wait before program connect to server
-        androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
 
 //        P.S: It's not AI comments :D
@@ -73,7 +75,7 @@ public class AndroidDriverProvider {
 
 
     public AndroidDriver rerunApplication() {
-        androidDriver.close();
+        androidDriver.quit();
         return create();
     }
 }

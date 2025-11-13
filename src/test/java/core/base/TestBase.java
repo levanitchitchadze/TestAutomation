@@ -19,6 +19,9 @@ public class TestBase {
     @Parameters({"platform"})
     public void setUp(String platform) {
         context = PlatformContextBuilder.build(platform);
+
+        androidDriver = context.getAndroidDriver();
+
         stepsFactory = new StepsFactory();
 
         pageFactory = new PageFactory();

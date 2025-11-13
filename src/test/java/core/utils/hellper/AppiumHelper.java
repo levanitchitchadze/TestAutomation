@@ -13,7 +13,9 @@ import java.time.Duration;
 public class AppiumHelper extends TestBase implements UserInterfaceHelper {
     //    All of this methods are little helpers for me to not write some code again and again
 
+    protected static AppiumHelper appiumHelper;
     private short maxSecondsOfWait = 20;
+
 
     @Override
     public WebElement findById(String id) {

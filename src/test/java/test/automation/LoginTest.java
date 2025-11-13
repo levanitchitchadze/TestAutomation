@@ -19,7 +19,7 @@ public class LoginTest extends TestBase {
     private LoginData loginData;
     private Faker faker;
     private Credentials fakeCredentials;
-    private IPlatformAbstractFactory IPlatformFactory;
+    private IPlatformAbstractFactory iPlatformFactory;
 
     @BeforeClass
     void setUpLoginTest() {
@@ -33,7 +33,7 @@ public class LoginTest extends TestBase {
     }
 
 
-    @BeforeClass(dependsOnMethods = {"setUp"})
+    @BeforeClass(dependsOnMethods = {"setUpLoginTest"})
     void closePopups() {
         loginSteps.notificationPermissions(true);
         loginSteps.choseLanguage(Language.GEO);
