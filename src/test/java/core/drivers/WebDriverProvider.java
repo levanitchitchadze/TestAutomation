@@ -1,7 +1,10 @@
 package core.drivers;
 
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 
+
+@Slf4j
 public class WebDriverProvider {
     private static WebDriver webDriver;
 
@@ -13,7 +16,8 @@ public class WebDriverProvider {
         return webDriver;
     }
 
-    private static WebDriver create() {
+    private static synchronized WebDriver create() {
+
 
         return null;
     }

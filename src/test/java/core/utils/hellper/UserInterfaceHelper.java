@@ -3,15 +3,16 @@ package core.utils.hellper;
 import org.openqa.selenium.WebElement;
 
 public interface UserInterfaceHelper {
-    WebElement findById(String id);
 
-    WebElement findByXpath(String xpath);
+    WebElement get(String id);
+
+    WebElement getx(String xpath);
 
     void click(WebElement element);
 
     void click(String selector);
 
-    String text_of(String id);
+    String textOf(String id);
 
     void type(String id, String text);
 
@@ -24,6 +25,8 @@ public interface UserInterfaceHelper {
     void waitTimeOut(int waitOfSeconds);
 
     WebElement waitFor(WebElement element, int maxSeconds);
+
+    WebElement waitFor(String selector);
 
     boolean isDisplayed(String id, int maxSeconds);
 

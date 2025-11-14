@@ -2,64 +2,44 @@ package core.steps.android;
 
 import core.enums.Language;
 import core.model.android.LoginPage;
+import core.model.android.OTPPage;
 import core.steps.common.ILoginSteps;
 import core.utils.hellper.AppiumHelper;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class LoginSteps extends AppiumHelper implements ILoginSteps {
 
-    private LoginPage loginPage = new LoginPage();
-
+    private final LoginPage loginPage = new LoginPage();
+    private final OTPPage otpPage = new OTPPage();
 
     public Boolean notificationsWindowIsVisible(String identifierId) {
         return isDisplayed(identifierId);
     }
 
     public void notificationPermissions(boolean allow) {
-        LoginPage lp = loginPage;
-
-        if (!isDisplayed(lp.getNOTIFICATION_DENY_BTN(), 1)) {
-            return;
-        }
-        if (allow) {
-            click(lp.getNOTIFICATION_ALLOW_BTN());
-        } else {
-            click(lp.getNOTIFICATION_DENY_BTN());
-        }
-
+        loginPage.acceptNotifications(allow);
     }
 
 
+    public boolean wrongAttemptWindowIsDisplayed() {
+        return loginPage.isWrongAttemptWindowDisplayed(true);
+    }
+
     public void choseLanguage(Language languageName) {
-        LoginPage lp = loginPage;
-        if (!isDisplayed(lp.getLANGUAGE_OPTION_GEO(), 1)) {
-            return;
-        }
-        if (languageName == Language.GEO) {
-            click(lp.getLANGUAGE_OPTION_GEO());
-        } else if (languageName == Language.ENG) {
-            click(lp.getLANGUAGE_OPTION_ENG());
-        }
+        loginPage.choseLanguage(languageName);
     }
 
 
     public boolean login(String username, String password) {
-        LoginPage lp = loginPage;
-        waitTimeOut(3);
-        type(lp.getUSERNAME_INPUT(), username);
-        type(lp.getPASSWORD_INPUT(), password);
-        click(lp.getSUBMIT_BTN());
 
-        return checkLogin();
+        boolean performed = loginPage.login(username, password);
+        return performed && checkLogin();
 
     }
 
 
     public boolean checkLogin() {
-        String wrongAttemptWindow = loginPage.getWRONG_ATTEMPT_WINDOW();
-        if (isDisplayed(wrongAttemptWindow, 2)) {
-            click(wrongAttemptWindow);
-            return false;
-        }
-        return isNotDisplayed(loginPage.getWELCOME_TEXT());
+        return otpPage.itIsOTPPage();
     }
 }

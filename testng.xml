@@ -5,14 +5,14 @@
         <parameter name="platform" value="android"/>
         <classes name="AuthenticationAndroid">
             <class name="test.automation.LoginTest"/>
-            <class name="core.utils.smsMessages.MessageReader"/>
+            <class name="core.utils.messages.input.MessageReader"/>
         </classes>
     </test>
     <!--    <test name="ios">-->
     <!--        <parameter name="platform" value="ios"/>-->
     <!--        <classes name="AuthenticationIOS">-->
     <!--            <class name="test.automation.LoginTest"/>-->
-    <!--            <class name="core.utils.smsMessages.MessageReader"/>-->
+    <!--            <class name="core.utils.messages.input.MessageReader"/>-->
     <!--        </classes>-->
     <!--    </test>-->
     <!--    <test name="web">-->

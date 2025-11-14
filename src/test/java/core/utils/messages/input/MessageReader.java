@@ -1,6 +1,7 @@
-package core.utils.smsMessages;
+package core.utils.messages.input;
 
 import core.utils.hellper.AppiumHelper;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,6 +9,7 @@ import java.io.InputStreamReader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Slf4j
 public class MessageReader {
 
     private static final String url = "content://sms/inbox";

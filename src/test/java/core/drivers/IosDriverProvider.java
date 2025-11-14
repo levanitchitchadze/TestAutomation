@@ -1,7 +1,9 @@
 package core.drivers;
 
 import io.appium.java_client.ios.IOSDriver;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class IosDriverProvider {
 
     private static IOSDriver iosDriver;
@@ -16,8 +18,11 @@ public class IosDriverProvider {
     }
 
 
-    private static IOSDriver create() {
+    private static synchronized IOSDriver create() {
+        if (iosDriver == null) {
+            iosDriver = create();
+        }
 
-        return null;
+        return iosDriver;
     }
 }

@@ -34,6 +34,7 @@ public class TestBase {
     public void tearDown() {
         if (androidDriver != null) {
             androidDriver.quit();
+
         }
     }
 }

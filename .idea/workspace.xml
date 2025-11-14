@@ -5,23 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="920f9a61-8e90-4d0e-85ac-a1e914a82eab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/config/android/AndroidEmulatorManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/config/appium/AppiumServerManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/android/OTPPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/OTPSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/log/appium/appium.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/config/AppiumConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidEmulatorManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/OTPSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/base/PlatformContextBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/PlatformContextBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/base/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/android/PhysicalDeviceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/config/android/PhysicalDeviceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/android/VirtualDeviceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/config/android/VirtualDeviceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/config/android/AndroidEmulatorManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/config/android/VirtualDeviceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/config/android/VirtualDeviceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/config/appium/AppiumServerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/AppiumServerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/android/LoginData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/android/LoginData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidDriverProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidDriverProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/console_reader/ReadCredentials.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/ApiClientProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/ApiClientProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/IosDriverProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/IosDriverProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/WebDriverProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/WebDriverProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/enums/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/enums/Language.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/model/android/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/OTPPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/model/android/OTPPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/PaymentPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/model/android/PaymentPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/LoginSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/PaymentSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/PaymentSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/api/OTPSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/OTPSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/ios/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/ios/LoginSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/hellper/AppiumHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/hellper/AppiumHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/smsMessages/OTPCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/smsMessages/MessageReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/hellper/UserInterfaceHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/hellper/UserInterfaceHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/messages/error/TestFailMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/messages/output/error/TestFailMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/smsMessages/MessageReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/messages/input/MessageReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/log/appium/appium.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/log/appium/appium.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/LoginTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/OTPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/OTPTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
@@ -79,43 +90,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Maven.Portfolio [spotless:apply].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TestNG./home/levan/Documents/GitHub/Portfolio/Portfolio/testng.xml.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LoginTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.OTPTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TestAsync.CompletableFutureCreation.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TestAsync.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TestAsync.reactiveStreamsCreation.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TestAsync.testArrays.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TestAsync.threadCreation.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.WebAppTests (1).executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.WebAppTests.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.otpTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.otpTest.fetchLatestOtpFromPhysicalDevice.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.testng.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Dev&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/levan/Documents/GitHub/CodeWars&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/home/levan/Documents/GitHub/Portfolio/Portfolio/test_automation/src/main/java/test/automation/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.39195403&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;/home/levan/Documents/GitHub/Portfolio/Portfolio/src/main/java/test/automation/WebAppTest.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Maven.Portfolio [spotless:apply].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG./home/levan/Documents/GitHub/Portfolio/Portfolio/testng.xml.executor": "Run",
+    "TestNG.LoginTest.executor": "Run",
+    "TestNG.OTPTest.executor": "Run",
+    "TestNG.TestAsync.CompletableFutureCreation.executor": "Run",
+    "TestNG.TestAsync.executor": "Run",
+    "TestNG.TestAsync.reactiveStreamsCreation.executor": "Run",
+    "TestNG.TestAsync.testArrays.executor": "Run",
+    "TestNG.TestAsync.threadCreation.executor": "Run",
+    "TestNG.WebAppTests (1).executor": "Run",
+    "TestNG.WebAppTests.executor": "Run",
+    "TestNG.otpTest.executor": "Run",
+    "TestNG.otpTest.fetchLatestOtpFromPhysicalDevice.executor": "Run",
+    "TestNG.testng.executor": "Run",
+    "git-widget-placeholder": "Dev",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/levan/Documents/GitHub/CodeWars",
+    "onboarding.tips.debug.path": "/home/levan/Documents/GitHub/Portfolio/Portfolio/test_automation/src/main/java/test/automation/Main.java",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.39195403",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "editing.templates",
+    "two.files.diff.last.used.file": "/home/levan/Documents/GitHub/Portfolio/Portfolio/src/main/java/test/automation/WebAppTest.java"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/core/factories/pages" />
@@ -132,6 +143,7 @@
       <recent name="$PROJECT_DIR$/src/test/java/test/automation/app_test" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="core.config" />
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -297,11 +309,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/test/automation/Main.java</url>
           <line>16</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/core/drivers/WebDriverProvider.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test_automation/src/main/java/test/automation/Main.java</url>

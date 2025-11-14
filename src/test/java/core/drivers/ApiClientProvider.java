@@ -2,12 +2,15 @@ package core.drivers;
 
 import core.data.api.BaseData;
 import io.restassured.specification.RequestSpecification;
+import lombok.extern.slf4j.Slf4j;
 
 import static io.restassured.RestAssured.given;
 
+@Slf4j
 public class ApiClientProvider {
 
     private static RequestSpecification client;
+
 
     public static RequestSpecification getClient() {
         if (client == null) {
@@ -20,5 +23,6 @@ public class ApiClientProvider {
         }
         return client;
     }
+
 
 }

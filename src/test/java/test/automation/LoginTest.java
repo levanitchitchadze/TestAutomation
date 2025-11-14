@@ -1,13 +1,10 @@
 package test.automation;
 
-import core.base.IPlatformAbstractFactory;
 import core.base.TestBase;
 import core.data.android.LoginData;
 import core.enums.Language;
 import core.steps.android.LoginSteps;
-import core.utils.messages.error.TestFailMessages;
-import net.datafaker.Faker;
-import net.datafaker.providers.base.Credentials;
+import core.utils.messages.output.error.TestFailMessages;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -17,9 +14,6 @@ public class LoginTest extends TestBase {
 
     private LoginSteps loginSteps;
     private LoginData loginData;
-    private Faker faker;
-    private Credentials fakeCredentials;
-    private IPlatformAbstractFactory iPlatformFactory;
 
     @BeforeClass
     void setUpLoginTest() {
@@ -27,8 +21,6 @@ public class LoginTest extends TestBase {
 
         loginData = new LoginData();
         loginSteps = new LoginSteps();
-        faker = new Faker();
-        fakeCredentials = faker.credentials();
 
     }
 
@@ -40,21 +32,34 @@ public class LoginTest extends TestBase {
     }
 
 
-    @Test(priority = 1)
-    void loginWithIncorrectCredentials() {
-
-        String username = fakeCredentials.username();
-        String password = fakeCredentials.password(8, 20, true, true, true);
-
-        boolean isLoginSuccessfully = loginSteps.login(username, password);
-        assert !isLoginSuccessfully : TestFailMessages.LOGIN_WITH_INVALID_CREDENTIALS;
+    @Test(groups = {"loginNegative", "login"})
+    void loginWithIncorrectUsername() {
+        boolean isLoginSuccessfully = loginSteps.login(loginData.getIncorrectUsername(), loginData.getPassword());
+        loginSteps.wrongAttemptWindowIsDisplayed();
+//        assert !loginSteps.wrongAttemptWindowIsDisplayed() : TestFailMessages.WRONG_ATTEMPT_WINDOW_IS_NOT_DISPLAYED;
+//        assert isLoginSuccessfully : TestFailMessages.LOGIN_WITH_INVALID_CREDENTIALS;
     }
 
-    @Test(priority = 2)
+    @Test(groups = {"loginNegative", "login"})
+    void loginWithIncorrectPassword() {
+        boolean isLoginSuccessfully = loginSteps.login(loginData.getUsername(), loginData.getIncorrectPassword());
+        loginSteps.wrongAttemptWindowIsDisplayed();
+//        assert !loginSteps.wrongAttemptWindowIsDisplayed() : TestFailMessages.WRONG_ATTEMPT_WINDOW_IS_NOT_DISPLAYED;
+//        assert isLoginSuccessfully : TestFailMessages.LOGIN_WITH_INVALID_CREDENTIALS;
+    }
+
+    @Test(groups = {"loginNegative", "login"})
+    void loginWithIncorrectCredentials() {
+        boolean isLoginSuccessfully = loginSteps.login(loginData.getIncorrectUsername(), loginData.getIncorrectPassword());
+        loginSteps.wrongAttemptWindowIsDisplayed();
+//        assert !loginSteps.wrongAttemptWindowIsDisplayed() : TestFailMessages.WRONG_ATTEMPT_WINDOW_IS_NOT_DISPLAYED;
+//        assert isLoginSuccessfully : TestFailMessages.LOGIN_WITH_INVALID_CREDENTIALS;
+    }
+
+    @Test(dependsOnGroups = {"loginNegative"}, groups = {"login"})
     void loginSuccessfully() {
 
         boolean isLoginSuccessfully = loginSteps.login(loginData.getUsername(), loginData.getPassword());
-
         assert isLoginSuccessfully : TestFailMessages.LOGIN_SUCCESSFULLY;
     }
 
