@@ -57,7 +57,7 @@ public class AndroidDriverProvider {
 //        capabilities.setCapability("appium:app",  System.getProperty("user.dir") + "/src/main/java/pom/data/test_object/apk/ApiDemos-debug.apk");
 
 //        If I want to not remove app data before use
-//        capabilities.setCapability("noReset", true);
+        capabilities.setCapability("noReset", true);
 
 
         URL url = getURL(appiumConfig.getURL(), appiumConfig.getPORT());
@@ -69,7 +69,7 @@ public class AndroidDriverProvider {
         androidDriver = new AndroidDriver(url, capabilities);
 
 //        Here is some wait before program connect to server
-        androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         log.info("Android Driver start.");
 //        P.S: It's not AI comments :D

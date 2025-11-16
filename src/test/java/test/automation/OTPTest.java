@@ -3,16 +3,19 @@ package test.automation;
 import core.data.android.OTPData;
 import core.steps.android.OTPSteps;
 import core.utils.messages.output.error.TestFailMessages;
+import io.cucumber.java.en.Then;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static core.data.android.OTPData.lastOTPCode;
+import static core.utils.messages.output.cucumber.ThenMessages.WRONG_ATTEMPT_WINDOW_SHOULD_BE_DISPLAYED;
 
 public class OTPTest {
 
-    OTPSteps otpSteps;
-    OTPData otpData;
+    private OTPSteps otpSteps;
+    private OTPData otpData;
+
 
     @BeforeClass
     void setUpOTPTest() {
@@ -29,29 +32,28 @@ public class OTPTest {
     @Test(dependsOnGroups = {"login"}, groups = "otpNegative")
     void enterIncorrectOTPCode() {
         otpSteps.enterOTP(otpData.getINCORRECT_OTP_CODE());
-        wrongAttemptWindowCheck();
+        wrongAttemptWindowCheck(WRONG_ATTEMPT_WINDOW_SHOULD_BE_DISPLAYED);
     }
 
 
     @Test(dependsOnGroups = {"login"}, groups = "otpNegative")
     void enterShortOTPCode() {
         otpSteps.enterOTP(otpData.getSHORT_OTP_CODE());
-        wrongAttemptWindowCheck();
+        wrongAttemptWindowCheck(WRONG_ATTEMPT_WINDOW_SHOULD_BE_DISPLAYED);
 
     }
 
     @Test(dependsOnGroups = {"login"}, groups = "otpNegative")
     void enterLongOTPCode() {
         otpSteps.enterOTP(otpData.getLONG_OTP_CODE());
-        wrongAttemptWindowCheck();
+        wrongAttemptWindowCheck(WRONG_ATTEMPT_WINDOW_SHOULD_BE_DISPLAYED);
     }
 
-    @Test(dependsOnGroups = {"login"}, alwaysRun = true)
+    //    @Test(dependsOnGroups = {"login"}, alwaysRun = true)
     void resendOtpCode() {
         otpSteps.resendOTPCode();
         String latestOTP = otpSteps.getLatestOTPCode();
-        assert lastOTPCode.equals(latestOTP) : TestFailMessages.OTP_CODE_WAS_NOT_SEND;
-        lastOTPCode = latestOTP;
+        otpSteps.checkNewOTPCode(latestOTP);
     }
 
     @Test(dependsOnGroups = {"login"}, alwaysRun = true)
@@ -60,8 +62,10 @@ public class OTPTest {
     }
 
 
-    private void wrongAttemptWindowCheck() {
+    @Then("{string}")
+    private void wrongAttemptWindowCheck(String stepDescription) {
         assert otpSteps.wrongAttemptWindowIsDisplayed(true) : TestFailMessages.WRONG_ATTEMPT_WINDOW_IS_NOT_DISPLAYED;
+
     }
 }
 

@@ -28,9 +28,15 @@ public class LoginPage extends AppiumHelper implements HasWrongAttemptWindow {
 
     private final WrongAttemptWindow wrongAttemptWindow = new WrongAttemptWindow();
 
+
     public boolean itIsLoginPage() {
         String[] loginPageRequiredElements = new String[]{USERNAME_INPUT, PASSWORD_INPUT, SUBMIT_BTN};
         return itIsCorrectPage(loginPageRequiredElements);
+    }
+
+
+    public boolean itIsFastLoginPage() {
+        return isDisplayed(PASSWORD_INPUT) && isDisplayed(WELCOME_TEXT) && !isDisplayed(USERNAME_INPUT);
     }
 
 
@@ -50,7 +56,6 @@ public class LoginPage extends AppiumHelper implements HasWrongAttemptWindow {
     }
 
     public boolean login(String username, String password) {
-        waitTimeOut(3);
         try {
 //            waitFor(SUBMIT_BTN);
             type(USERNAME_INPUT, username);
@@ -61,6 +66,18 @@ public class LoginPage extends AppiumHelper implements HasWrongAttemptWindow {
             log.error("Can't find login element: " + nfe.getMessage());
             throw new RuntimeException("Can't find login elements:" + nfe);
 //            return false;
+        }
+
+    }
+
+    public boolean fastLogin(String password) {
+        try {
+            type(PASSWORD_INPUT, password);
+            click(SUBMIT_BTN);
+            return true;
+        } catch (NotFoundException nfe) {
+            log.error("Can't find login element for fast login: " + nfe.getMessage());
+            throw new RuntimeException("Can't find login elements:" + nfe);
         }
 
     }

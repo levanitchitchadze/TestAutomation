@@ -17,7 +17,6 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
     //    All of this methods are little helpers for me to not write some code again and again
 
     protected static AppiumHelper appiumHelper;
-    private short maxSecondsOfWait = 20;
 
     @Override
     public void click(String selector) {
@@ -29,17 +28,6 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
         return androidDriver.getPageSource();
     }
 
-    public void closePopup() {
-        androidDriver.findElement(AppiumBy.androidUIAutomator(
-                "new UiSelector().resourceId(\"android:id/button1\")")).click();
-//        androidDriver.findElement(AppiumBy.androidUIAutomator(
-//                "new UiSelector().resourceId(" + UIAutomatorText + ")"));
-    }
-
-
-    public void clickWithPosition() {
-
-    }
 
     public void clickx(String xpath) {
         WebElement element = androidDriver.findElement(AppiumBy.xpath(xpath));
@@ -90,9 +78,16 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
 
     @Override
     public boolean isDisplayed(String id) {
-        WebElement element = androidDriver.findElement(AppiumBy.id(id));
 
-        return waitFor(element).isDisplayed();
+        try {
+            WebElement element = androidDriver.findElement(AppiumBy.id(id));
+
+            return waitFor(element).isDisplayed();
+
+        } catch (NotFoundException e) {
+            return false;
+        }
+
     }
 
     @Override
@@ -104,9 +99,14 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
 
     @Override
     public boolean isDisplayed(String id, int maxSeconds) {
-        WebElement element = androidDriver.findElement(AppiumBy.id(id));
+        try {
+            WebElement element = androidDriver.findElement(AppiumBy.id(id));
+            return waitFor(element).isDisplayed();
 
-        return waitFor(element).isDisplayed();
+        } catch (NotFoundException e) {
+            return false;
+        }
+
     }
 
     @Override
@@ -133,7 +133,6 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
     @Override
     public WebElement waitFor(WebElement element) {
 
-        WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(maxSecondsOfWait));
         return wait.until(ExpectedConditions.visibilityOf(element));
 
     }
@@ -141,7 +140,6 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
     @Override
     public WebElement waitFor(String selector) {
 
-        WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(maxSecondsOfWait));
         return wait.until(ExpectedConditions.visibilityOf(get(selector)));
 
     }
@@ -149,7 +147,6 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
     @Override
     public WebElement waitFor(String selector, int maxSecondsOfWait) {
 
-        WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(maxSecondsOfWait));
         return wait.until(ExpectedConditions.visibilityOf(get(selector)));
 
     }

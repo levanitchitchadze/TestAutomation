@@ -4,6 +4,7 @@ import core.config.android.VirtualDeviceConfig;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.concurrent.CompletableFuture;
 
@@ -29,6 +30,7 @@ public class AndroidEmulatorManager {
     }
 
     private Process getProcess() {
+
 
         ProcessBuilder builder = new ProcessBuilder(
                 virtualDeviceConfig.getANDROID_HOME() + "/emulator/emulator",
@@ -80,14 +82,39 @@ public class AndroidEmulatorManager {
 
     public CompletableFuture<Void> startEmulatorAsync() {
         return CompletableFuture.supplyAsync(() -> {
-                    getProcess();          // მუშაობა უსასრულოდ გაგრძელდება background-ში
-                    waitUntilBootCompleted();        // აქ ველოდებით emu boot-ს
-                    return true;                     // signal: სიცოცხლეა, ემუ მზადაა
+                    if (isEmulatorRunning(virtualDeviceConfig.getDEVICE_SERIAL_NUMBER())) return true;
+                    getProcess();
+                    waitUntilBootCompleted();
+                    return true;
                 })
                 .thenAccept(ready -> {
                     System.out.println("Emulator is ready!");
                 });
     }
 
+
+    private boolean isEmulatorRunning(String deviceSerialNumber) {
+
+        String command = String.format("adb devices | grep '%s'", deviceSerialNumber);
+
+        String[] executionOptions = {"bash", "-c", command};
+
+        StringBuilder out = new StringBuilder();
+
+        try {
+            Process proc = Runtime.getRuntime().exec(executionOptions);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                out.append(line).append("\n");
+                return true;
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return false;
+    }
 
 }

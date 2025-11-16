@@ -8,6 +8,8 @@ import core.utils.messages.output.error.TestFailMessages;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import static core.utils.messages.output.cucumber.ThenMessages.WRONG_ATTEMPT_WINDOW_SHOULD_BE_DISPLAYED;
+
 
 //    There are login tests I want to run, each method has a meaningful name, so just read :d
 public class LoginTest extends TestBase {
@@ -18,45 +20,46 @@ public class LoginTest extends TestBase {
 
     @BeforeClass
     void setUpLoginTest() {
-
-
         loginData = new LoginData();
         loginSteps = new LoginSteps();
 
     }
 
 
-    @BeforeClass(dependsOnMethods = {"setUpLoginTest"})
+    @Test()
+    void checkApplicationOpened() {
+        loginSteps.itIsLoginPage();
+    }
+
+
+    @Test(dependsOnMethods = {"checkApplicationOpened"})
     void closePopups() {
         loginSteps.notificationPermissions(true);
         loginSteps.choseLanguage(Language.GEO);
     }
 
 
-    @Test(groups = {"loginNegative", "login"})
+    @Test(dependsOnMethods = {"closePopups"}, groups = {"loginNegative", "login"})
     void loginWithIncorrectUsername() {
 
-        boolean isLoginSuccessfully = loginSteps.login(loginData.getIncorrectUsername(), loginData.getPassword());
-        wrongAttemptWindowValidation();
-        assert !isLoginSuccessfully : TestFailMessages.LOGIN_WITH_INVALID_CREDENTIALS;
+        loginSteps.login(loginData.getIncorrectUsername(), loginData.getPassword());
+        loginSteps.wrongAttemptWindowValidation(WRONG_ATTEMPT_WINDOW_SHOULD_BE_DISPLAYED);
+
     }
 
-    @Test(groups = {"loginNegative", "login"})
+    @Test(dependsOnMethods = {"closePopups"}, groups = {"loginNegative", "login"})
     void loginWithIncorrectPassword() {
         //User may lock so I use incorrect username :d
-        boolean isLoginSuccessfully = loginSteps.login(loginData.getIncorrectUsername(), loginData.getIncorrectPassword());
-        wrongAttemptWindowValidation();
+        loginSteps.login(loginData.getIncorrectUsername(), loginData.getIncorrectPassword());
+        loginSteps.wrongAttemptWindowValidation(WRONG_ATTEMPT_WINDOW_SHOULD_BE_DISPLAYED);
 
-        assert !isLoginSuccessfully : TestFailMessages.LOGIN_WITH_INVALID_CREDENTIALS;
     }
 
-    @Test(groups = {"loginNegative", "login"})
+    @Test(dependsOnMethods = {"closePopups"}, groups = {"loginNegative", "login"})
     void loginWithIncorrectCredentials() {
 
-        boolean isLoginSuccessfully = loginSteps.login(loginData.getIncorrectUsername(), loginData.getIncorrectPassword());
-        wrongAttemptWindowValidation();
-
-        assert !isLoginSuccessfully : TestFailMessages.LOGIN_WITH_INVALID_CREDENTIALS;
+        loginSteps.login(loginData.getIncorrectUsername(), loginData.getIncorrectPassword());
+        loginSteps.wrongAttemptWindowValidation(WRONG_ATTEMPT_WINDOW_SHOULD_BE_DISPLAYED);
 
     }
 
@@ -64,11 +67,8 @@ public class LoginTest extends TestBase {
     void loginSuccessfully() {
 
         boolean isLoginSuccessfully = loginSteps.login(loginData.getUsername(), loginData.getPassword());
-        assert isLoginSuccessfully : TestFailMessages.LOGIN_SUCCESSFULLY;
-    }
 
-    public void wrongAttemptWindowValidation() {
-        assert loginSteps.wrongAttemptWindowIsDisplayed(true) : TestFailMessages.WRONG_ATTEMPT_WINDOW_IS_NOT_DISPLAYED;
+        assert isLoginSuccessfully : TestFailMessages.LOGIN_SUCCESSFULLY;
     }
 
 

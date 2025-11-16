@@ -5,35 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="920f9a61-8e90-4d0e-85ac-a1e914a82eab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deviceManager.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/data/DataClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/data/android/OTPData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/android/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/android/HorizontalMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/android/common/HasWrongAttemptWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/android/common/WrongAttemptWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/utils/validation/Validator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/appSource.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/config/cucumber/ParameterTypes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/runners/TestRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/HomeSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/utils/messages/output/cucumber/ThenMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/home.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/otp.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/base/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/TestBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/data/android/LoginData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/android/LoginData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/android/otpPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidDriverProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidDriverProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidEmulatorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidEmulatorManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/AppiumServerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/AppiumServerManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/model/android/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/OTPPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/model/android/OTPPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/LoginSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/OTPSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/OTPSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/hellper/AppiumHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/hellper/AppiumHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/hellper/UserInterfaceHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/hellper/UserInterfaceHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/messages/input/MessageReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/messages/input/MessageReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/messages/output/error/TestFailMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/messages/output/error/TestFailMessages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/log/appium/appium.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/log/appium/appium.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/LoginTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/OTPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/OTPTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/login.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,6 +101,8 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;SHOW_ALL_PROCESSES&quot;: &quot;true&quot;,
     &quot;TestNG./home/levan/Documents/GitHub/Portfolio/Portfolio/testng.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.HomePage.checkIfEmulatorRunning.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginTest (1).executor&quot;: &quot;Run&quot;,
     &quot;TestNG.LoginTest.executor&quot;: &quot;Run&quot;,
     &quot;TestNG.OTPTest.executor&quot;: &quot;Run&quot;,
     &quot;TestNG.TestAsync.CompletableFutureCreation.executor&quot;: &quot;Run&quot;,
@@ -160,7 +155,25 @@
     </key>
   </component>
   <component name="RunManager" selected="TestNG./home/levan/Documents/GitHub/Portfolio/Portfolio/testng.xml">
-    <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="HomePage.checkIfEmulatorRunning" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Portfolio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.automation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.automation" />
+      <option name="MAIN_CLASS_NAME" value="test.automation.HomePage" />
+      <option name="METHOD_NAME" value="checkIfEmulatorRunning" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Portfolio" />
       <extension name="coverage">
         <pattern>
@@ -170,23 +183,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="test.automation" />
       <option name="MAIN_CLASS_NAME" value="test.automation.LoginTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OTPTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Portfolio" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.automation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.automation" />
-      <option name="MAIN_CLASS_NAME" value="test.automation.OTPTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -274,8 +270,8 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.testng" />
-      <item itemvalue="TestNG.LoginTest" />
-      <item itemvalue="TestNG.OTPTest" />
+      <item itemvalue="TestNG.HomePage.checkIfEmulatorRunning" />
+      <item itemvalue="TestNG.LoginTest (1)" />
       <item itemvalue="TestNG.TestAsync" />
       <item itemvalue="TestNG.TestAsync.testArrays" />
       <item itemvalue="TestNG./home/levan/Documents/GitHub/Portfolio/Portfolio/testng.xml" />
@@ -283,10 +279,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG./home/levan/Documents/GitHub/Portfolio/Portfolio/testng.xml" />
+        <item itemvalue="TestNG.HomePage.checkIfEmulatorRunning" />
+        <item itemvalue="TestNG.LoginTest (1)" />
         <item itemvalue="TestNG.TestAsync.testArrays" />
         <item itemvalue="TestNG.TestAsync" />
-        <item itemvalue="TestNG.OTPTest" />
-        <item itemvalue="TestNG.LoginTest" />
       </list>
     </recent_temporary>
   </component>

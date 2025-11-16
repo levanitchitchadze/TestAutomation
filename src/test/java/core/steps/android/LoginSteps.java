@@ -5,6 +5,13 @@ import core.model.android.LoginPage;
 import core.model.android.OTPPage;
 import core.steps.common.ILoginSteps;
 import core.utils.hellper.AppiumHelper;
+import core.utils.messages.output.error.TestFailMessages;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -13,10 +20,18 @@ public class LoginSteps extends AppiumHelper implements ILoginSteps {
     private final LoginPage loginPage = new LoginPage();
     private final OTPPage otpPage = new OTPPage();
 
-    public Boolean notificationsWindowIsVisible(String identifierId) {
-        return isDisplayed(identifierId);
+    @Before
+    public void setUp(Scenario scenario) {
+        if (androidDriver == null) super.setUpForCucumber(scenario);
     }
 
+    @Given("The user opened the application")
+    public void itIsLoginPage() {
+        loginPage.itIsLoginPage();
+    }
+
+
+    @And("{} notification permissions")
     public void notificationPermissions(boolean allow) {
         loginPage.acceptNotifications(allow);
     }
@@ -26,17 +41,31 @@ public class LoginSteps extends AppiumHelper implements ILoginSteps {
         return loginPage.wrongAttemptWindowIsDisplayed(click);
     }
 
+    @And("Chose the {language} language")
     public void choseLanguage(Language languageName) {
         loginPage.choseLanguage(languageName);
     }
 
-
+    //    User enters "<username>" and "<password>" and click submit button
+    @When("User enters {string} and {string} and click submit button")
     public boolean login(String username, String password) {
-
-        boolean performed = loginPage.login(username, password);
-//        return true;
+        boolean performed = false;
+        if (loginPage.itIsFastLoginPage()) performed = fastLogin(password);
+        else performed = loginPage.login(username, password);
         return performed && checkLogin();
 
+    }
+    //
+
+
+    private boolean fastLogin(String password) {
+
+        return loginPage.fastLogin(password);
+    }
+
+    @Then("{string}")
+    public void wrongAttemptWindowValidation(String chechDscription) {
+        assert wrongAttemptWindowIsDisplayed(true) : TestFailMessages.WRONG_ATTEMPT_WINDOW_IS_NOT_DISPLAYED;
     }
 
 
@@ -44,3 +73,5 @@ public class LoginSteps extends AppiumHelper implements ILoginSteps {
         return otpPage.itIsOTPPage();
     }
 }
+
+

@@ -15,6 +15,8 @@ public class LoginData extends DataClass {
     private String incorrectPassword = fakeCredentials.password(8, 20, true, true, true);
     private String username = Dotenv.load().get("username");
     private String password = Dotenv.load().get("password");
+    private String APP_PACKAGE = "com.icomvision.bsc.tbc";
+    private String APP_ACTIVITY = "com.icomvision.bsc.tbc/ge.tbc.bank.features.authentication.presentation.LoginActivity";
 
 
 }
