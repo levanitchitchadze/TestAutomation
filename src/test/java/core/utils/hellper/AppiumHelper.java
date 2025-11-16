@@ -25,6 +25,22 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
         waitFor(element).click();
     }
 
+    public String getPageSource() {
+        return androidDriver.getPageSource();
+    }
+
+    public void closePopup() {
+        androidDriver.findElement(AppiumBy.androidUIAutomator(
+                "new UiSelector().resourceId(\"android:id/button1\")")).click();
+//        androidDriver.findElement(AppiumBy.androidUIAutomator(
+//                "new UiSelector().resourceId(" + UIAutomatorText + ")"));
+    }
+
+
+    public void clickWithPosition() {
+
+    }
+
     public void clickx(String xpath) {
         WebElement element = androidDriver.findElement(AppiumBy.xpath(xpath));
         waitFor(element).click();
@@ -61,7 +77,15 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
     @Override
 
     public void type(String id, String text) {
-        waitFor(androidDriver.findElement(AppiumBy.id(id))).sendKeys(text);
+        WebElement element = waitFor(androidDriver.findElement(AppiumBy.id(id)));
+        element.clear();
+        element.sendKeys(text);
+    }
+
+    public void type(String id, String text, boolean clearFirst) {
+        if (!clearFirst)
+            waitFor(androidDriver.findElement(AppiumBy.id(id))).sendKeys(text);
+        type(id, text);
     }
 
     @Override
@@ -123,9 +147,17 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
     }
 
     @Override
+    public WebElement waitFor(String selector, int maxSecondsOfWait) {
+
+        WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(maxSecondsOfWait));
+        return wait.until(ExpectedConditions.visibilityOf(get(selector)));
+
+    }
+
+    @Override
     public void waitTimeOut(int waitOfSeconds) {
-
-        androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitOfSeconds));
-
+        synchronized (androidDriver) {
+            androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitOfSeconds));
+        }
     }
 }

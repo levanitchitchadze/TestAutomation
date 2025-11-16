@@ -8,6 +8,7 @@ import core.utils.messages.output.error.TestFailMessages;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+
 //    There are login tests I want to run, each method has a meaningful name, so just read :d
 public class LoginTest extends TestBase {
 
@@ -34,33 +35,40 @@ public class LoginTest extends TestBase {
 
     @Test(groups = {"loginNegative", "login"})
     void loginWithIncorrectUsername() {
+
         boolean isLoginSuccessfully = loginSteps.login(loginData.getIncorrectUsername(), loginData.getPassword());
-        loginSteps.wrongAttemptWindowIsDisplayed();
-//        assert !loginSteps.wrongAttemptWindowIsDisplayed() : TestFailMessages.WRONG_ATTEMPT_WINDOW_IS_NOT_DISPLAYED;
-//        assert isLoginSuccessfully : TestFailMessages.LOGIN_WITH_INVALID_CREDENTIALS;
+        wrongAttemptWindowValidation();
+        assert !isLoginSuccessfully : TestFailMessages.LOGIN_WITH_INVALID_CREDENTIALS;
     }
 
     @Test(groups = {"loginNegative", "login"})
     void loginWithIncorrectPassword() {
-        boolean isLoginSuccessfully = loginSteps.login(loginData.getUsername(), loginData.getIncorrectPassword());
-        loginSteps.wrongAttemptWindowIsDisplayed();
-//        assert !loginSteps.wrongAttemptWindowIsDisplayed() : TestFailMessages.WRONG_ATTEMPT_WINDOW_IS_NOT_DISPLAYED;
-//        assert isLoginSuccessfully : TestFailMessages.LOGIN_WITH_INVALID_CREDENTIALS;
+        //User may lock so I use incorrect username :d
+        boolean isLoginSuccessfully = loginSteps.login(loginData.getIncorrectUsername(), loginData.getIncorrectPassword());
+        wrongAttemptWindowValidation();
+
+        assert !isLoginSuccessfully : TestFailMessages.LOGIN_WITH_INVALID_CREDENTIALS;
     }
 
     @Test(groups = {"loginNegative", "login"})
     void loginWithIncorrectCredentials() {
+
         boolean isLoginSuccessfully = loginSteps.login(loginData.getIncorrectUsername(), loginData.getIncorrectPassword());
-        loginSteps.wrongAttemptWindowIsDisplayed();
-//        assert !loginSteps.wrongAttemptWindowIsDisplayed() : TestFailMessages.WRONG_ATTEMPT_WINDOW_IS_NOT_DISPLAYED;
-//        assert isLoginSuccessfully : TestFailMessages.LOGIN_WITH_INVALID_CREDENTIALS;
+        wrongAttemptWindowValidation();
+
+        assert !isLoginSuccessfully : TestFailMessages.LOGIN_WITH_INVALID_CREDENTIALS;
+
     }
 
-    @Test(dependsOnGroups = {"loginNegative"}, groups = {"login"})
+    @Test(dependsOnGroups = {"loginNegative"}, groups = {"login"}, alwaysRun = true)
     void loginSuccessfully() {
 
         boolean isLoginSuccessfully = loginSteps.login(loginData.getUsername(), loginData.getPassword());
         assert isLoginSuccessfully : TestFailMessages.LOGIN_SUCCESSFULLY;
+    }
+
+    public void wrongAttemptWindowValidation() {
+        assert loginSteps.wrongAttemptWindowIsDisplayed(true) : TestFailMessages.WRONG_ATTEMPT_WINDOW_IS_NOT_DISPLAYED;
     }
 
 

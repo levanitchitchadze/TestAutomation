@@ -34,6 +34,7 @@ public class AndroidEmulatorManager {
                 virtualDeviceConfig.getANDROID_HOME() + "/emulator/emulator",
                 "-avd", virtualDeviceConfig.getDEVICE_NAME(),     // შენი AVD სახელი
                 "-port", virtualDeviceConfig.getPORT(),              // სურვილის შემთხვევაში პორტი
+                "-no-snapshot-load",
                 "-no-snapshot-save",          // სწრაფი გაშვება
                 "-no-boot-anim"               // boot animation გამორთვა
         );

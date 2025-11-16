@@ -22,6 +22,8 @@ public interface UserInterfaceHelper {
 
     WebElement waitFor(WebElement element);
 
+    WebElement waitFor(String selector, int maxSecondsOfWait);
+
     void waitTimeOut(int waitOfSeconds);
 
     WebElement waitFor(WebElement element, int maxSeconds);

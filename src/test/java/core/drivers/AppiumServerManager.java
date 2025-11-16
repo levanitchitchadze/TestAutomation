@@ -59,7 +59,7 @@ public class AppiumServerManager {
                 .withArgument(GeneralServerFlag.SESSION_OVERRIDE)
                 .withArgument(GeneralServerFlag.USE_PLUGINS, "inspector") //appium will run with inspector plugin
                 .withLogFile(new File("src/test/java/log/appium/appium.log"))
-                .withArgument(() -> "--log-level", "fatal");
+                .withArgument(() -> "--log-level", "error");
 
 
         AppiumDriverLocalService service = AppiumDriverLocalService.buildService(appiumServiceBuilder);

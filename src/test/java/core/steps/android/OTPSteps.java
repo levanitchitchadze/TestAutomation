@@ -13,27 +13,39 @@ public class OTPSteps extends AppiumHelper {
     private final String deviceSerialNumber;
     private final OTPPage otpPage = new OTPPage();
 
+
     public OTPSteps(String deviceSerialNumber) {
         this.deviceSerialNumber = deviceSerialNumber;
     }
 
 
-    private String getLatestOTPCode() {
+    public String getLatestOTPCode() {
         PhysicalDeviceConfig physicalDevice = new PhysicalDeviceConfig();
 
-        MessageReader messageReader = new MessageReader(deviceSerialNumber, appiumHelper);
-        return messageReader.getOTPCode(physicalDevice.getOTP_FILTER_TEXT(), physicalDevice.getOTP_SORT_COLUMN());
+        MessageReader messageReader = new MessageReader(deviceSerialNumber);
+        String otp = messageReader.getOTPCode(physicalDevice.getOTP_FILTER_TEXT(), physicalDevice.getOTP_SORT_COLUMN());
+
+        log.info("OTP code: " + otp);
+
+        return otp;
     }
 
 
-    public void enterOTP() {
-        String otp = getLatestOTPCode();
+    public void enterOTP(String otp) {
         otpPage.enterOtpCode(otp);
-        log.info("OTP code: " + otp);
-        waitTimeOut(100);
+    }
+
+
+    public void resendOTPCode() {
+        otpPage.resendOTPCode();
     }
 
     public boolean itIsOTPPage() {
         return otpPage.itIsOTPPage();
+    }
+
+
+    public boolean wrongAttemptWindowIsDisplayed(boolean click) {
+        return otpPage.wrongAttemptWindowIsDisplayed(click);
     }
 }

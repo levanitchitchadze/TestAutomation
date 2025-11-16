@@ -7,10 +7,11 @@
     <inspection_tool class="groupsTestNG" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="groups">
         <value>
-          <list size="3">
+          <list size="4">
             <item index="0" class="java.lang.String" itemvalue="setUp" />
             <item index="1" class="java.lang.String" itemvalue="loginNegative" />
             <item index="2" class="java.lang.String" itemvalue="login" />
+            <item index="3" class="java.lang.String" itemvalue="otpNegative" />
           </list>
         </value>
       </option>

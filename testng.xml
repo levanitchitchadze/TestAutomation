@@ -5,7 +5,7 @@
         <parameter name="platform" value="android"/>
         <classes name="AuthenticationAndroid">
             <class name="test.automation.LoginTest"/>
-            <class name="core.utils.messages.input.MessageReader"/>
+            <class name="test.automation.OTPTest"/>
         </classes>
     </test>
     <!--    <test name="ios">-->

@@ -2,6 +2,8 @@ package core.model.android;
 
 
 import core.enums.Language;
+import core.model.android.common.HasWrongAttemptWindow;
+import core.model.android.common.WrongAttemptWindow;
 import core.utils.hellper.AppiumHelper;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -10,7 +12,7 @@ import org.openqa.selenium.NotFoundException;
 // There we have selectors for login page
 @Getter
 @Slf4j
-public class LoginPage extends AppiumHelper {
+public class LoginPage extends AppiumHelper implements HasWrongAttemptWindow {
 
     //    All the constants are screaming :D.
     private final String NOTIFICATION_ALLOW_BTN = "com.android.permissioncontroller:id/permission_allow_button";
@@ -23,8 +25,12 @@ public class LoginPage extends AppiumHelper {
     private final String PASSWORD_INPUT = "com.icomvision.bsc.tbc:id/edPassword";
     private final String SUBMIT_BTN = "com.icomvision.bsc.tbc:id/btLogin";
 
+
+    private final WrongAttemptWindow wrongAttemptWindow = new WrongAttemptWindow();
+
     public boolean itIsLoginPage() {
-        return isDisplayed(USERNAME_INPUT) && isDisplayed(PASSWORD_INPUT) && isDisplayed(SUBMIT_BTN);
+        String[] loginPageRequiredElements = new String[]{USERNAME_INPUT, PASSWORD_INPUT, SUBMIT_BTN};
+        return itIsCorrectPage(loginPageRequiredElements);
     }
 
 
@@ -36,14 +42,11 @@ public class LoginPage extends AppiumHelper {
 
     }
 
-    public boolean isWrongAttemptWindowDisplayed(boolean click) {
+    @Override
+    public boolean wrongAttemptWindowIsDisplayed(boolean click) {
 
-        waitTimeOut(10);
-        if (isDisplayed(WRONG_ATTEMPT_WINDOW_BTN)) {
-            if (click) click(WRONG_ATTEMPT_WINDOW_BTN);
-            return true;
-        }
-        return isNotDisplayed(getWELCOME_TEXT());
+        return wrongAttemptWindow.wrongAttemptWindowIsDisplayed(click, WRONG_ATTEMPT_WINDOW_BTN);
+
     }
 
     public boolean login(String username, String password) {
@@ -56,7 +59,8 @@ public class LoginPage extends AppiumHelper {
             return true;
         } catch (NotFoundException nfe) {
             log.error("Can't find login element: " + nfe.getMessage());
-            return false;
+            throw new RuntimeException("Can't find login elements:" + nfe);
+//            return false;
         }
 
     }

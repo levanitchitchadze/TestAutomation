@@ -22,8 +22,8 @@ public class LoginSteps extends AppiumHelper implements ILoginSteps {
     }
 
 
-    public boolean wrongAttemptWindowIsDisplayed() {
-        return loginPage.isWrongAttemptWindowDisplayed(true);
+    public boolean wrongAttemptWindowIsDisplayed(boolean click) {
+        return loginPage.wrongAttemptWindowIsDisplayed(click);
     }
 
     public void choseLanguage(Language languageName) {
@@ -34,6 +34,7 @@ public class LoginSteps extends AppiumHelper implements ILoginSteps {
     public boolean login(String username, String password) {
 
         boolean performed = loginPage.login(username, password);
+//        return true;
         return performed && checkLogin();
 
     }
