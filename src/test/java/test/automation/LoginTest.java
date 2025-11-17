@@ -1,9 +1,9 @@
 package test.automation;
 
 import core.base.TestBase;
-import core.data.android.LoginData;
+import core.data.LoginData;
 import core.enums.Language;
-import core.steps.android.LoginSteps;
+import core.steps.android.AndroidLoginSteps;
 import core.utils.messages.output.error.TestFailMessages;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -15,13 +15,13 @@ import static core.utils.messages.output.cucumber.ThenMessages.WRONG_ATTEMPT_WIN
 public class LoginTest extends TestBase {
 
 
-    private LoginSteps loginSteps;
+    private AndroidLoginSteps loginSteps;
     private LoginData loginData;
 
     @BeforeClass
     void setUpLoginTest() {
         loginData = new LoginData();
-        loginSteps = new LoginSteps();
+        loginSteps = new AndroidLoginSteps();
 
     }
 
@@ -35,8 +35,6 @@ public class LoginTest extends TestBase {
     @Test(dependsOnMethods = {"checkApplicationOpened"})
     void closePopups() {
 //        loginSteps.notificationPermissions(true); //For old version Tbc bank :)
-//        loginSteps.confirmStart();
-//        loginSteps.enterMobileNumber(loginData.getMobileNumber());
         loginSteps.choseLanguage(Language.GEO);
     }
 

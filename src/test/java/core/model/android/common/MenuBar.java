@@ -20,7 +20,7 @@ public class MenuBar extends AppiumHelper {
 
     private HashMap<String, String> pageSelectors = new HashMap<>();
 
-    
+
     private void fillDict() {
         pageSelectors.put("home", MENU_BAR_OPTION_HOME);
         pageSelectors.put("products", MENU_BAR_OPTION_PRODUCTS);
@@ -33,6 +33,7 @@ public class MenuBar extends AppiumHelper {
     private void changePage(String pageName) {
         if (pageSelectors == null) fillDict();
         try {
+            System.out.println(pageSelectors.get(pageName.toLowerCase()));
             click(pageSelectors.get(pageName.toLowerCase()));
 
         } catch (NotFoundException nfe) {

@@ -15,21 +15,46 @@ import java.time.Duration;
 import java.util.concurrent.ExecutionException;
 
 @Slf4j
-public class AndroidDriverProvider {
+public class AndroidDriverProvider implements IDriverProvider<AndroidDriver> {
 
     private static AndroidDriver androidDriver;
 
+    public static AndroidDriverProvider getInstance() {
+        return Holder.INSTANCE;
+    }
 
-    public static synchronized AndroidDriver getDriver() {
-        if (androidDriver == null) {
-            androidDriver = create();
+    private static void setUpServers(VirtualDeviceConfig deviceConfig, AppiumConfig appiumConfig) {
+        AndroidEmulatorManager androidEmulatorManager = AndroidEmulatorManager.getInstance(deviceConfig);
+
+        try {
+            androidEmulatorManager.startEmulatorAsync().thenRun(() -> {
+                AppiumServerManager.getInstance(appiumConfig).startAppiumServer();
+            }).get();
+        } catch (ExecutionException | InterruptedException e) {
+            log.error("Mistake while waiting emulator and appium: " + e.getMessage());
+            throw new RuntimeException("Startup interrupted", e);
         }
+    }
+
+    private static URL getURL(String urlString, int port) {
+        try {
+            return new URI(urlString + ":" + port).toURL();
+        } catch (URISyntaxException | MalformedURLException urlE) {
+            log.error("Appium URL is not with valid format: " + urlE.getMessage());
+            return null;
+        }
+    }
+//
+
+    @Override
+    public synchronized AndroidDriver getDriver() {
+        if (androidDriver == null) create();
 
         return androidDriver;
     }
 
-
-    private static AndroidDriver create() {
+    @Override
+    public void create() {
 //        The DesiredCapabilities class helps us specify which parameters our program should run with
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -77,35 +102,24 @@ public class AndroidDriverProvider {
         log.info("Android Driver start.");
 //        P.S: It's not AI comments :D
 
+//        return androidDriver;
+    }
+
+    @Override
+    public void close() {
+        androidDriver.quit();
+    }
+
+    public Object restart() {
+        androidDriver.quit();
+        create();
         return androidDriver;
     }
 
-    private static void setUpServers(VirtualDeviceConfig deviceConfig, AppiumConfig appiumConfig) {
-        AndroidEmulatorManager androidEmulatorManager = AndroidEmulatorManager.getInstance(deviceConfig);
 
-        try {
-            androidEmulatorManager.startEmulatorAsync().thenRun(() -> {
-                AppiumServerManager.getInstance(appiumConfig).startAppiumServer();
-            }).get();
-        } catch (ExecutionException | InterruptedException e) {
-            log.error("Mistake while waiting emulator and appium: " + e.getMessage());
-            throw new RuntimeException("Startup interrupted", e);
-        }
+    private static class Holder {
+        private static final AndroidDriverProvider INSTANCE = new AndroidDriverProvider();
     }
 
 
-    private static URL getURL(String urlString, int port) {
-        try {
-            return new URI(urlString + ":" + port).toURL();
-        } catch (URISyntaxException | MalformedURLException urlE) {
-            log.error("Appium URL is not with valid format: " + urlE.getMessage());
-            return null;
-        }
-    }
-
-
-    public AndroidDriver rerunApplication() {
-        androidDriver.quit();
-        return create();
-    }
 }

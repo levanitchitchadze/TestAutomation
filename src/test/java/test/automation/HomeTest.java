@@ -1,29 +1,28 @@
 package test.automation;
 
 import core.base.TestBase;
-import core.data.android.LoginData;
-import core.steps.android.HomeSteps;
-import core.steps.android.LoginSteps;
-import core.steps.android.OTPSteps;
+import core.data.HomeData;
+import core.steps.common.HomeSteps;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class HomeTest extends TestBase {
 
-    LoginSteps loginSteps;
-    LoginData loginData;
-    OTPSteps otpsteps;
+
     HomeSteps homeSteps;
+    HomeData homeData;
 
     @BeforeClass
     void setUpHomeTest() {
-        homeSteps = new HomeSteps();
-
+        homeData = new HomeData();
+        homeSteps = ctx.getHomeSteps();
     }
 
 
-    @Test
+    @Test(dependsOnGroups = {"otpPositive"})
     void moveToMenuBarPages() {
+
+        System.out.println("Context in test Method:" + ctx);
         homeSteps.itIsHomePage();
         homeSteps.navigateToAllPage();
     }

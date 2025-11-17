@@ -1,16 +1,15 @@
 package core.base;
 
-import core.factories.steps.StepsFactory;
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.Scenario;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NotFoundException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
 import java.time.Duration;
@@ -20,24 +19,32 @@ import java.util.regex.Pattern;
 
 @Slf4j
 public class TestBase {
-    public static AndroidDriver androidDriver;
+    public static Object driver;
+    public static PlatformContext ctx;
     protected IPlatformAbstractFactory iPlatformAbstractFactory;
-    protected PlatformContext context;
-    protected StepsFactory steps;
     //    protected androidPageFactory androidPageFactory;
     protected short maxSecondsOfWait = 20;
 
-    protected WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(maxSecondsOfWait));
+    @BeforeClass(alwaysRun = true)
+    @Parameters({"platform"})
+    public void setUp(String platform) {
+        System.out.println();
+        setUpDriver(platform);
 
+    }
 
     protected boolean itIsCorrectPage(String[] requiredSelectors, String strategy) {
+        WebDriver webDriver = ctx.getAndroidDriver();
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(maxSecondsOfWait));
+
         try {
+
             if (strategy.equals("xpath")) {
                 return Arrays.stream(requiredSelectors)
-                        .allMatch(x -> wait.until(ExpectedConditions.visibilityOf(androidDriver.findElement(By.xpath(x)))).isDisplayed());
+                        .allMatch(x -> wait.until(ExpectedConditions.visibilityOf(webDriver.findElement(By.xpath(x)))).isDisplayed());
             } else if (strategy.equals("id")) {
                 return Arrays.stream(requiredSelectors)
-                        .allMatch(id -> wait.until(ExpectedConditions.visibilityOf(androidDriver.findElement(AppiumBy.id(id)))).isDisplayed());
+                        .allMatch(id -> wait.until(ExpectedConditions.visibilityOf(webDriver.findElement(AppiumBy.id(id)))).isDisplayed());
             } else {
                 throw new RuntimeException("invalid Strategy isItCorrectPage method need strategy ex: id, xpath");
             }
@@ -48,19 +55,6 @@ public class TestBase {
             return false;
         }
     }
-
-
-    @BeforeTest
-    @Parameters({"platform"})
-    public void setUp(String platform) {
-        setUpDriver(platform);
-
-//        androidStepsFactory = StepsFactory.getAndroidFactory();
-
-//        androidPageFactory = new PageFactory();
-
-    }
-
 
     public void setUpForCucumber(Scenario scenario) {
 
@@ -80,18 +74,17 @@ public class TestBase {
 
     private void setUpDriver(String platform) {
 
-        if (androidDriver != null) return;
-        if (context == null) context = PlatformContextBuilder.build(platform);
+        ctx = PlatformContextBuilder.build(platform);
 
-        androidDriver = context.getAndroidDriver();
 
+        System.out.println("test base android loginsteps:" + ctx);
     }
 
     //    The tearDown method closes the driver no mether what, otherwise it may cause problems for the next run.
     @AfterTest(alwaysRun = true)
     public void tearDown() {
-        if (androidDriver != null) {
-            androidDriver.quit();
+        if (driver != null) {
+            driver = null;
 
         }
     }

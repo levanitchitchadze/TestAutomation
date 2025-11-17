@@ -2,6 +2,7 @@ package core.utils.hellper;
 
 import core.base.TestBase;
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.AndroidDriver;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.NotFoundException;
@@ -16,7 +17,11 @@ import java.time.Duration;
 public class AppiumHelper extends TestBase implements UserInterfaceHelper {
     //    All of this methods are little helpers for me to not write some code again and again
 
-    protected static AppiumHelper appiumHelper;
+
+    public static AndroidDriver androidDriver;
+
+    protected WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(maxSecondsOfWait));
+
 
     @Override
     public void click(String selector) {
