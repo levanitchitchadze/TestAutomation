@@ -7,8 +7,8 @@ public class StepsFactory {
         return new ApiStepsFactory();
     }
 
-    public static AndroidStepsFactory getAndroidFactory() {
-        return new AndroidStepsFactory();
+    public static HomeStepsFactory getAndroidFactory() {
+        return new HomeStepsFactory();
     }
 
     public static IosStepsFactory getIosFactory() {

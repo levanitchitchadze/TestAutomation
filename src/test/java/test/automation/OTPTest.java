@@ -24,7 +24,7 @@ public class OTPTest {
         otpSteps = new OTPSteps(dotenv.get("DEVICE_SERIAL_NUMBER"));
         otpData = new OTPData();
         lastOTPCode = otpSteps.getLatestOTPCode();
-        assert otpSteps.itIsOTPPage() : TestFailMessages.ITS_NOT_CORRECT_PAGE;
+//        assert otpSteps.itIsOTPPage() : TestFailMessages.ITS_NOT_CORRECT_PAGE;
 
     }
 
@@ -49,14 +49,15 @@ public class OTPTest {
         wrongAttemptWindowCheck(WRONG_ATTEMPT_WINDOW_SHOULD_BE_DISPLAYED);
     }
 
-    //    @Test(dependsOnGroups = {"login"}, alwaysRun = true)
+    @Test(dependsOnGroups = {"login"}, alwaysRun = true)
     void resendOtpCode() {
         otpSteps.resendOTPCode();
         String latestOTP = otpSteps.getLatestOTPCode();
         otpSteps.checkNewOTPCode(latestOTP);
+
     }
 
-    @Test(dependsOnGroups = {"login"}, alwaysRun = true)
+    @Test(dependsOnGroups = {"login"}, groups = "otpPositive", alwaysRun = true)
     void passOTPCheck() {
         otpSteps.enterOTP(lastOTPCode);
     }

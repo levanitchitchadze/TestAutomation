@@ -6,8 +6,9 @@ public class PageFactory {
         return new ApiPagesFactory();
     }
 
-    public static AndroidPagesFactory getAndroidFactory() {
-        return new AndroidPagesFactory();
+    public static HomePagesFactory getAndroidFactory() {
+//        return new HomePagesFactory();
+        return null;
     }
 
     public static IosPagesFactory getIosFactory() {

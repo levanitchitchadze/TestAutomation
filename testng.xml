@@ -6,10 +6,11 @@
     <test name="android" preserve-order="true">
         <parameter name="platform" value="android"/>
         <classes name="AuthenticationAndroid">
-            <!--            <class name="test.automation.LoginTest"/>-->
-            <!--            <class name="test.automation.OTPTest"/>-->
+            <!--            <class name="test.automation.GreetingTest"/>-->
+            <class name="test.automation.LoginTest"/>
+            <class name="test.automation.OTPTest"/>
 
-            <class name="test.automation.HomePage"/>
+            <!--            <class name="test.automation.HomeTest"/>-->
             <!--            <class name="core.runners.TestRunner"/>-->
 
         </classes>

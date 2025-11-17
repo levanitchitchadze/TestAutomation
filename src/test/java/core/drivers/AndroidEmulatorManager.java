@@ -34,11 +34,11 @@ public class AndroidEmulatorManager {
 
         ProcessBuilder builder = new ProcessBuilder(
                 virtualDeviceConfig.getANDROID_HOME() + "/emulator/emulator",
-                "-avd", virtualDeviceConfig.getDEVICE_NAME(),     // შენი AVD სახელი
-                "-port", virtualDeviceConfig.getPORT(),              // სურვილის შემთხვევაში პორტი
+                "-avd", virtualDeviceConfig.getDEVICE_NAME(),
+                "-port", virtualDeviceConfig.getPORT(),
                 "-no-snapshot-load",
-                "-no-snapshot-save",          // სწრაფი გაშვება
-                "-no-boot-anim"               // boot animation გამორთვა
+                "-no-snapshot-save",
+                "-no-boot-anim"
         );
 
 
@@ -72,7 +72,7 @@ public class AndroidEmulatorManager {
                     break;
                 }
 
-                Thread.sleep(2000); // განმეორება ყოველ 2 წამში
+                Thread.sleep(2000);
 
             } catch (Exception e) {
                 e.printStackTrace();

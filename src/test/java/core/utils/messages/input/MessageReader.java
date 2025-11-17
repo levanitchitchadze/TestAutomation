@@ -27,6 +27,7 @@ public class MessageReader {
 
     public String getOTPCode(String filterBy, String sortBy) {
 
+        appiumHelper.waitTimeOut(2);
         now = new Date(System.currentTimeMillis() - (3 * 1000));
 
 

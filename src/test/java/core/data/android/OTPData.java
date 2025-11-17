@@ -11,5 +11,4 @@ public class OTPData extends DataClass {
     private final String SHORT_OTP_CODE = faker.number().digits(3);
     private final String LONG_OTP_CODE = faker.number().digits(10);
 
-
 }

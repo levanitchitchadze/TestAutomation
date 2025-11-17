@@ -16,7 +16,7 @@ public class LoginPage extends AppiumHelper implements HasWrongAttemptWindow {
 
     //    All the constants are screaming :D.
     private final String NOTIFICATION_ALLOW_BTN = "com.android.permissioncontroller:id/permission_allow_button";
-    private final String NOTIFICATION_DENY_BTN = "com.android.permissioncontroller:id/permission_allow_button";
+    private final String NOTIFICATION_DENY_BTN = "com.android.permissioncontroller:id/permission_deny_button";
     private final String LANGUAGE_OPTION_GEO = "android:id/button1";
     private final String LANGUAGE_OPTION_ENG = "android:id/button2";
     private final String WELCOME_TEXT = "com.icomvision.bsc.tbc:id/tvWelcome";
@@ -31,7 +31,7 @@ public class LoginPage extends AppiumHelper implements HasWrongAttemptWindow {
 
     public boolean itIsLoginPage() {
         String[] loginPageRequiredElements = new String[]{USERNAME_INPUT, PASSWORD_INPUT, SUBMIT_BTN};
-        return itIsCorrectPage(loginPageRequiredElements);
+        return itIsCorrectPage(loginPageRequiredElements, "id");
     }
 
 
@@ -41,6 +41,7 @@ public class LoginPage extends AppiumHelper implements HasWrongAttemptWindow {
 
 
     public void acceptNotifications(boolean allow) {
+        switchTo();
         if (isNotDisplayed(NOTIFICATION_DENY_BTN, 3)) return;
 
         if (allow) click(NOTIFICATION_ALLOW_BTN);
@@ -84,6 +85,7 @@ public class LoginPage extends AppiumHelper implements HasWrongAttemptWindow {
 
     public void choseLanguage(Language languageName) {
 
+        switchTo();
 
         if (!isDisplayed(LANGUAGE_OPTION_GEO, 1)) {
             return;

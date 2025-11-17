@@ -16,6 +16,10 @@ public interface UserInterfaceHelper {
 
     void type(String id, String text);
 
+    void clickcn(String selector);
+
+    void switchTo();
+
     boolean isDisplayed(String id);
 
     boolean isNotDisplayed(String id);

@@ -34,7 +34,9 @@ public class LoginTest extends TestBase {
 
     @Test(dependsOnMethods = {"checkApplicationOpened"})
     void closePopups() {
-        loginSteps.notificationPermissions(true);
+//        loginSteps.notificationPermissions(true); //For old version Tbc bank :)
+//        loginSteps.confirmStart();
+//        loginSteps.enterMobileNumber(loginData.getMobileNumber());
         loginSteps.choseLanguage(Language.GEO);
     }
 

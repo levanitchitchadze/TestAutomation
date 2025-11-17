@@ -19,6 +19,7 @@ public class AndroidDriverProvider {
 
     private static AndroidDriver androidDriver;
 
+
     public static synchronized AndroidDriver getDriver() {
         if (androidDriver == null) {
             androidDriver = create();
@@ -26,6 +27,7 @@ public class AndroidDriverProvider {
 
         return androidDriver;
     }
+
 
     private static AndroidDriver create() {
 //        The DesiredCapabilities class helps us specify which parameters our program should run with
@@ -45,6 +47,7 @@ public class AndroidDriverProvider {
         capabilities.setCapability("appium:automationName", deviceConfig.getAUTOMATION_NAME());
         capabilities.setCapability("appium:deviceName", deviceConfig.getDEVICE_NAME());
         capabilities.setCapability("enableMultiWindows", true);
+        capabilities.setCapability("autoGrantPermissions", true);
 
 //        App package name I want to test (already installed app from PlayStore)
         capabilities.setCapability("appPackage", deviceConfig.getAPP_PACKAGE());
@@ -57,7 +60,7 @@ public class AndroidDriverProvider {
 //        capabilities.setCapability("appium:app",  System.getProperty("user.dir") + "/src/main/java/pom/data/test_object/apk/ApiDemos-debug.apk");
 
 //        If I want to not remove app data before use
-        capabilities.setCapability("noReset", true);
+//        capabilities.setCapability("noReset", true);
 
 
         URL url = getURL(appiumConfig.getURL(), appiumConfig.getPORT());

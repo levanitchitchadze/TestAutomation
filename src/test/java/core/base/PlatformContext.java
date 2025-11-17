@@ -1,5 +1,6 @@
 package core.base;
 
+import core.drivers.IDriverProvider;
 import core.enums.PlatformType;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
@@ -20,6 +21,8 @@ public class PlatformContext {
     private AndroidDriver androidDriver;
     private IOSDriver iosDriver;
     private RequestSpecification apiClient;
+
+    private IDriverProvider driver;
 
 
     public PlatformContext(PlatformType type) {

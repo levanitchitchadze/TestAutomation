@@ -25,7 +25,7 @@ public class OTPPage extends AppiumHelper implements HasWrongAttemptWindow {
 
 
         String[] otpPageRequiredElements = new String[]{OTP_INPUT, SUBMIT_BTN, TITLE};
-        return itIsCorrectPage(otpPageRequiredElements);
+        return itIsCorrectPage(otpPageRequiredElements, "id");
     }
 
 

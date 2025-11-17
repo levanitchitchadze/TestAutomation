@@ -25,6 +25,7 @@ public class LoginSteps extends AppiumHelper implements ILoginSteps {
         if (androidDriver == null) super.setUpForCucumber(scenario);
     }
 
+
     @Given("The user opened the application")
     public void itIsLoginPage() {
         loginPage.itIsLoginPage();
@@ -58,7 +59,7 @@ public class LoginSteps extends AppiumHelper implements ILoginSteps {
     //
 
 
-    private boolean fastLogin(String password) {
+    public boolean fastLogin(String password) {
 
         return loginPage.fastLogin(password);
     }

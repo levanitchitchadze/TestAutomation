@@ -5,6 +5,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.Scenario;
 import lombok.extern.slf4j.Slf4j;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -29,16 +30,25 @@ public class TestBase {
     protected WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(maxSecondsOfWait));
 
 
-    protected boolean itIsCorrectPage(String[] requiredElements) {
+    protected boolean itIsCorrectPage(String[] requiredSelectors, String strategy) {
         try {
-            return Arrays.stream(requiredElements)
-                    .allMatch(id -> wait.until(ExpectedConditions.visibilityOf(androidDriver.findElement(AppiumBy.id(id)))).isDisplayed());
+            if (strategy.equals("xpath")) {
+                return Arrays.stream(requiredSelectors)
+                        .allMatch(x -> wait.until(ExpectedConditions.visibilityOf(androidDriver.findElement(By.xpath(x)))).isDisplayed());
+            } else if (strategy.equals("id")) {
+                return Arrays.stream(requiredSelectors)
+                        .allMatch(id -> wait.until(ExpectedConditions.visibilityOf(androidDriver.findElement(AppiumBy.id(id)))).isDisplayed());
+            } else {
+                throw new RuntimeException("invalid Strategy isItCorrectPage method need strategy ex: id, xpath");
+            }
+
+
         } catch (NotFoundException nfe) {
             log.error("Can't find required element for page:" + nfe.getMessage());
             return false;
         }
-
     }
+
 
     @BeforeTest
     @Parameters({"platform"})

@@ -20,8 +20,27 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
 
     @Override
     public void click(String selector) {
+
         WebElement element = androidDriver.findElement(AppiumBy.id(selector));
         waitFor(element).click();
+    }
+
+    @Override
+    public void clickcn(String selector) {
+        WebElement element = androidDriver.findElement(AppiumBy.className(selector));
+        waitFor(element).click();
+    }
+
+    public void typecn(String selector, String text) {
+        WebElement element = androidDriver.findElement(AppiumBy.className(selector));
+        element.clear();
+        element.sendKeys(text);
+    }
+
+
+    @Override
+    public void switchTo() {
+        androidDriver.switchTo().alert();
     }
 
     public String getPageSource() {
@@ -66,6 +85,12 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
 
     public void type(String id, String text) {
         WebElement element = waitFor(androidDriver.findElement(AppiumBy.id(id)));
+        element.clear();
+        element.sendKeys(text);
+    }
+
+    public void typex(String xpath, String text) {
+        WebElement element = waitFor(androidDriver.findElement(AppiumBy.xpath(xpath)));
         element.clear();
         element.sendKeys(text);
     }
