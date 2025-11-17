@@ -5,53 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="920f9a61-8e90-4d0e-85ac-a1e914a82eab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/data/android/HomeData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/data/android/MenuBarData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/data/android/apk/com.icomvision.bsc.tbc_bd479555.apk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/drivers/IDriverProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/android/MobileTopUpPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/android/common/MenuBar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/android/common/SideBar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/api/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/ios/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/web/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/MobileTopUpSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/MobileTopUpTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/TestFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/base/IPlatformAbstractFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/IPlatformAbstractFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/base/PlatformContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/PlatformContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/base/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/android/OTPData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/android/OTPData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidDriverProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidDriverProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidEmulatorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidEmulatorManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/pages/AndroidPagesFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/pages/HomePagesFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/pages/ApiPagesFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/pages/ApiPagesFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/pages/IosPagesFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/pages/IosPagesFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/pages/PageFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/pages/PageFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/pages/WebPagesFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/pages/WebPagesFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/steps/AndroidStepsFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/steps/HomeStepsFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/steps/ApiStepsFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/steps/ApiStepsFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/steps/IosStepsFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/steps/IosStepsFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/steps/StepsFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/steps/StepsFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/steps/WebStepsFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/steps/WebStepsFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/model/android/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/model/android/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/OTPPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/model/android/OTPPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/HomeSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/HomeSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/LoginSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/hellper/AppiumHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/hellper/AppiumHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/hellper/UserInterfaceHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/hellper/UserInterfaceHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/messages/input/MessageReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/messages/input/MessageReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/messages/output/error/TestFailMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/messages/output/error/TestFailMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/log/appium/appium.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/log/appium/appium.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/HomeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/OTPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/OTPTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/home.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/home.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/android/apk/com.icomvision.bsc.tbc_bd479555.apk" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
