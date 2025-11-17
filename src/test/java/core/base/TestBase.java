@@ -19,7 +19,6 @@ import java.util.regex.Pattern;
 
 @Slf4j
 public class TestBase {
-    public static Object driver;
     public static PlatformContext ctx;
     protected IPlatformAbstractFactory iPlatformAbstractFactory;
     //    protected androidPageFactory androidPageFactory;
@@ -77,14 +76,13 @@ public class TestBase {
         ctx = PlatformContextBuilder.build(platform);
 
 
-        System.out.println("test base android loginsteps:" + ctx);
     }
 
     //    The tearDown method closes the driver no mether what, otherwise it may cause problems for the next run.
     @AfterTest(alwaysRun = true)
     public void tearDown() {
-        if (driver != null) {
-            driver = null;
+        if (ctx != null) {
+            ctx = null;
 
         }
     }

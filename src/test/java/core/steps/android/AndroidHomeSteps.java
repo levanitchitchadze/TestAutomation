@@ -1,8 +1,8 @@
 package core.steps.android;
 
 import core.data.MenuBarData;
-import core.model.android.AndroidHomePage;
-import core.model.common.HomePage;
+import core.module.android.AndroidHomePage;
+import core.module.common.HomePage;
 import core.steps.common.HomeSteps;
 import core.utils.hellper.AppiumHelper;
 import core.utils.messages.output.error.TestFailMessages;
@@ -36,6 +36,8 @@ public class AndroidHomeSteps extends AppiumHelper implements HomeSteps {
     @When("User clicks menu bar element")
     @Then("It changes page")
     public void navigateToAllPage() {
+        assert itIsHomePage() : TestFailMessages.ITS_NOT_CORRECT_PAGE;
+
         String[] pageOptions = menuBarData.getBOTTOM_MENU_PAGE_OPTIONS();
         assert homePage.navigateToPagesAndBack(pageOptions) : TestFailMessages.CANT_MOVE_MENU_PAGE;
 

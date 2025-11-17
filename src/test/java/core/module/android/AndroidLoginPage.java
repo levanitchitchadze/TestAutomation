@@ -1,10 +1,10 @@
-package core.model.android;
+package core.module.android;
 
 
 import core.enums.Language;
-import core.model.android.common.HasWrongAttemptWindow;
-import core.model.android.common.WrongAttemptWindow;
-import core.model.common.LoginPage;
+import core.module.android.common.HasWrongAttemptWindow;
+import core.module.android.common.WrongAttemptWindow;
+import core.module.common.LoginPage;
 import core.utils.hellper.AppiumHelper;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;

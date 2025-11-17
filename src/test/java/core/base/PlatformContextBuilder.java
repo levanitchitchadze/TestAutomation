@@ -3,18 +3,19 @@ package core.base;
 import core.enums.PlatformType;
 import core.factories.AndroidFactory;
 import core.factories.ApiFactory;
-import core.model.android.AndroidHomePage;
-import core.model.android.AndroidLoginPage;
-import core.model.android.AndroidOTPPage;
-import core.model.api.ApiHomePage;
-import core.model.api.ApiLoginPage;
-import core.model.api.ApiOTPPage;
+import core.module.android.AndroidHomePage;
+import core.module.android.AndroidLoginPage;
+import core.module.android.AndroidOTPPage;
+import core.module.api.ApiHomePage;
+import core.module.api.ApiLoginPage;
+import core.module.api.ApiOTPPage;
 import core.steps.android.AndroidHomeSteps;
 import core.steps.android.AndroidLoginSteps;
 import core.steps.android.AndroidOTPSteps;
 import core.steps.api.ApiHomeSteps;
 import core.steps.api.ApiLoginSteps;
 import core.steps.api.ApiOTPSteps;
+import core.utils.api.APIRequestBuilder;
 import core.utils.hellper.AppiumHelper;
 
 public class PlatformContextBuilder {
@@ -27,7 +28,6 @@ public class PlatformContextBuilder {
         switch (type) {
             case ANDROID -> {
 
-//                try {
                 AppiumHelper.androidDriver = new AndroidFactory().getDriver();
                 ctx.setAndroidDriver(AppiumHelper.androidDriver);
                 ctx.setHomePage(new AndroidHomePage());
@@ -37,17 +37,11 @@ public class PlatformContextBuilder {
                 ctx.setOtpPage(new AndroidOTPPage());
                 ctx.setOtpSteps(new AndroidOTPSteps());
 
-                System.out.println("From Context:" + ctx.getLoginSteps());
-//                } catch (Exception e) {
-//                    throw new RuntimeException("Exception while initialization android context:" + e);
-//                }
-                System.out.println("Context Type first:" + ctx.getType());
-
 
             }
             case API -> {
-
-                ctx.setApiDriver(new ApiFactory().getDriver());
+                APIRequestBuilder.requestSpecification = new ApiFactory().getDriver();
+                ctx.setApiDriver(APIRequestBuilder.requestSpecification);
                 ctx.setHomePage(new ApiHomePage());
                 ctx.setHomeSteps(new ApiHomeSteps());
                 ctx.setLoginPage(new ApiLoginPage());

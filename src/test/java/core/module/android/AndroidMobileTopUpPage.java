@@ -1,6 +1,6 @@
-package core.model.android;
+package core.module.android;
 
-import core.model.common.MobileTopUpPage;
+import core.module.common.MobileTopUpPage;
 import core.utils.hellper.AppiumHelper;
 
 public class AndroidMobileTopUpPage extends AppiumHelper implements MobileTopUpPage {

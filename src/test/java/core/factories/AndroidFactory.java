@@ -3,12 +3,12 @@ package core.factories;
 
 import core.base.IPlatformAbstractFactory;
 import core.drivers.AndroidDriverProvider;
-import core.model.android.AndroidHomePage;
-import core.model.android.AndroidLoginPage;
-import core.model.android.AndroidOTPPage;
-import core.model.common.HomePage;
-import core.model.common.LoginPage;
-import core.model.common.OTPPage;
+import core.module.android.AndroidHomePage;
+import core.module.android.AndroidLoginPage;
+import core.module.android.AndroidOTPPage;
+import core.module.common.HomePage;
+import core.module.common.LoginPage;
+import core.module.common.OTPPage;
 import core.steps.android.AndroidHomeSteps;
 import core.steps.android.AndroidLoginSteps;
 import core.steps.android.AndroidOTPSteps;

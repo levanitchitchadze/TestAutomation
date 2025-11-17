@@ -1,8 +1,8 @@
 package core.steps.android;
 
 import core.enums.Language;
-import core.model.android.AndroidLoginPage;
-import core.model.android.AndroidOTPPage;
+import core.module.android.AndroidLoginPage;
+import core.module.android.AndroidOTPPage;
 import core.steps.common.LoginSteps;
 import core.utils.hellper.AppiumHelper;
 import core.utils.messages.output.error.TestFailMessages;

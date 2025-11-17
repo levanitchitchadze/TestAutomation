@@ -5,39 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="920f9a61-8e90-4d0e-85ac-a1e914a82eab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/factories/AndroidFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/factories/ApiFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/api/ApiHomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/api/ApiLoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/api/ApiMobileTopUpPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/api/ApiOTPPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/common/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/common/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/common/MobileTopUpPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/common/OTPPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiHomeSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/data/BaseData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/data/UsersData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/enums/HTTP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/users/CreateUserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/module/api/ApiHomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/module/api/ApiMobileTopUpPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/module/api/UsersController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiLoginSteps.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiMobileTopUpSteps.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiOTPSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/common/HomeSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/UsersSteps.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/common/LoginSteps.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/common/MobileTopUpSteps.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/common/OTPSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/utils/hellper/APIHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/utils/api/APIRequestBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/utils/regex/MatcherRegexes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/utils/url/PathBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/utils/url/QueryBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/utils/url/RequestBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/UsersAPITest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/base/IPlatformAbstractFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/IPlatformAbstractFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/base/PlatformContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/PlatformContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/base/PlatformContextBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/PlatformContextBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/base/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/DataClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/TestDataClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/TestDataClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/TestDataClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/data/android/HomeData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/HomeData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/android/LoginData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/LoginData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/data/android/MenuBarData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/MenuBarData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/data/android/OTPData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/OTPData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/data/api/BaseData.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidDriverProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidDriverProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/ApiClientProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/ApiClientProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/IDriverProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/IDriverProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/AndroidFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/AndroidFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/ApiFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/ApiFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/pages/ApiPagesFactory.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/pages/HomePagesFactory.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/pages/IosPagesFactory.java" beforeDir="false" />
@@ -48,32 +49,42 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/steps/IosStepsFactory.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/steps/StepsFactory.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/steps/WebStepsFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/model/android/AndroidHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/HorizontalMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/model/android/AndroidLoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/MobileTopUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/model/android/AndroidMobileTopUpPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/OTPPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/model/android/AndroidOTPPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/PaymentPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/common/HasWrongAttemptWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/model/android/common/HasWrongAttemptWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/common/MenuBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/model/android/common/MenuBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/api/HomePage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/ios/HomePage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/web/HomePage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/HomeSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidHomeSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidLoginSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/AndroidHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/AndroidLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidLoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/AndroidMobileTopUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidMobileTopUpPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/AndroidOTPPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidOTPPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/common/HasWrongAttemptWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/common/HasWrongAttemptWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/common/MenuBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/common/MenuBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/common/SideBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/common/SideBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/common/WrongAttemptWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/common/WrongAttemptWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/api/ApiHomePage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/api/ApiLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/api/ApiLoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/api/ApiMobileTopUpPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/api/ApiOTPPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/api/ApiOTPPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/common/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/common/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/common/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/common/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/common/MobileTopUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/common/MobileTopUpPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/common/OTPPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/common/OTPPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidHomeSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidHomeSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidLoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidLoginSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidOTPSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidOTPSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/MobileTopUpSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidMobileTopUpSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/OTPSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidOTPSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/PaymentSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiHomeSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiHomeSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/api/LoginSteps.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/api/OTPSteps.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/api/PaymentStep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/common/HomeSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/common/HomeSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/common/ILoginSteps.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/common/IPaymentSteps.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/ios/LoginSteps.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/ios/PaymentSteps.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/web/LoginSteps.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/web/PaymentSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/hellper/APIHelper.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/hellper/AppiumHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/hellper/AppiumHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/messages/input/MessageReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/messages/input/MessageReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/validation/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/validation/Validator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/log/appium/appium.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/log/appium/appium.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/HomeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/HomeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/LoginTest.java" afterDir="false" />

@@ -10,6 +10,9 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static core.utils.regex.MatcherRegexes.TBC_SMS_OTP_MESSAGES_REGEX;
+import static core.utils.regex.MatcherRegexes.UNIX_TIME_REGEX;
+
 @Slf4j
 public class MessageReader {
 
@@ -31,7 +34,7 @@ public class MessageReader {
         now = new Date(System.currentTimeMillis() - (3 * 1000));
 
 
-        String regexString = "\\b(\\d{4,8})\\b";
+        String regexString = TBC_SMS_OTP_MESSAGES_REGEX;
 
         String latestRowsCount = "10";
 
@@ -104,7 +107,7 @@ public class MessageReader {
     }
 
     private boolean checkOTPDate(String msg) {
-        String timeRegex = "(?<=date=)\\d{12,15}";
+        String timeRegex = UNIX_TIME_REGEX;
         Matcher matcher = Pattern.compile(timeRegex).matcher(msg);
 
         if (!matcher.find()) return false;

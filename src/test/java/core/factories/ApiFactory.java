@@ -2,9 +2,9 @@ package core.factories;
 
 import core.base.IPlatformAbstractFactory;
 import core.drivers.ApiClientProvider;
-import core.model.common.HomePage;
-import core.model.common.LoginPage;
-import core.model.common.OTPPage;
+import core.module.common.HomePage;
+import core.module.common.LoginPage;
+import core.module.common.OTPPage;
 import core.steps.common.HomeSteps;
 import core.steps.common.LoginSteps;
 import core.steps.common.OTPSteps;
@@ -15,7 +15,7 @@ public class ApiFactory implements IPlatformAbstractFactory {
 
 
     public ApiFactory() {
-        this.client = (RequestSpecification) new ApiClientProvider().getDriver();
+        this.client = new ApiClientProvider().getDriver();
     }
 
     @Override

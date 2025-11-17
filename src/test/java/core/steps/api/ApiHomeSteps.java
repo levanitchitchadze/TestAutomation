@@ -9,12 +9,9 @@ public class ApiHomeSteps extends AppiumHelper implements HomeSteps {
 
 
     @Override
-    public boolean itIsHomePage() {
-        return false;
-    }
-
-    @Override
     public void navigateToAllPage() {
 
     }
+
+
 }

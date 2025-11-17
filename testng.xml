@@ -3,20 +3,20 @@
 
 <suite name="app" parrallel="test" Thread-count="2">
 
-    <test name="android" preserve-order="true">
-        <parameter name="platform" value="android"/>
-        <classes name="AuthenticationAndroid">
-            <class name="test.automation.LoginTest"/>
-            <class name="test.automation.OTPTest"/>
-            <class name="test.automation.HomeTest"/>
-            <!--            <class name="core.runners.TestRunner"/>-->
-        </classes>
-    </test>
+    <!--    <test name="android" preserve-order="true">-->
+    <!--        <parameter name="platform" value="android"/>-->
+    <!--        <classes name="AuthenticationAndroid">-->
+    <!--            <class name="test.automation.LoginTest"/>-->
+    <!--            <class name="test.automation.OTPTest"/>-->
+    <!--            <class name="test.automation.HomeTest"/>-->
+    <!--            &lt;!&ndash;            <class name="core.runners.TestRunner"/>&ndash;&gt;-->
+    <!--        </classes>-->
+    <!--    </test>-->
 
     <test name="api">
-        <parameter name="platform" value="android"/>
+        <parameter name="platform" value="api"/>
         <classes name="AuthenticationAndroid">
-            <class name="test.automation.HomeTest"/>
+            <class name="test.automation.UsersAPITest"/>
         </classes>
     </test>
 

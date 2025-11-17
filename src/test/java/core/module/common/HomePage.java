@@ -1,4 +1,4 @@
-package core.model.common;
+package core.module.common;
 
 public interface HomePage {
 

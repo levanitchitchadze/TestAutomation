@@ -22,8 +22,7 @@ public class HomeTest extends TestBase {
     @Test(dependsOnGroups = {"otpPositive"})
     void moveToMenuBarPages() {
 
-        System.out.println("Context in test Method:" + ctx);
-        homeSteps.itIsHomePage();
+
         homeSteps.navigateToAllPage();
     }
 

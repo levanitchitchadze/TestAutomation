@@ -1,8 +1,8 @@
 package core.steps.android;
 
 import core.config.android.PhysicalDeviceConfig;
-import core.model.android.AndroidOTPPage;
-import core.model.common.OTPPage;
+import core.module.android.AndroidOTPPage;
+import core.module.common.OTPPage;
 import core.steps.common.OTPSteps;
 import core.utils.hellper.AppiumHelper;
 import core.utils.messages.input.MessageReader;

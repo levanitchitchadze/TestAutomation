@@ -1,17 +1,16 @@
-package core.model.api;
+package core.module.api;
 
 
 import core.enums.Language;
-import core.model.android.common.HasWrongAttemptWindow;
-import core.model.common.LoginPage;
-import core.utils.hellper.APIHelper;
+import core.module.android.common.HasWrongAttemptWindow;
+import core.module.common.LoginPage;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 // There we have selectors for login page
 @Getter
 @Slf4j
-public class ApiLoginPage extends APIHelper implements HasWrongAttemptWindow, LoginPage {
+public class ApiLoginPage implements HasWrongAttemptWindow, LoginPage {
 
     @Override
     public boolean wrongAttemptValidation(boolean click) {

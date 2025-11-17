@@ -1,10 +1,10 @@
 package core.base;
 
 import core.enums.PlatformType;
-import core.model.common.HomePage;
-import core.model.common.LoginPage;
-import core.model.common.MobileTopUpPage;
-import core.model.common.OTPPage;
+import core.module.common.HomePage;
+import core.module.common.LoginPage;
+import core.module.common.MobileTopUpPage;
+import core.module.common.OTPPage;
 import core.steps.common.HomeSteps;
 import core.steps.common.LoginSteps;
 import core.steps.common.MobileTopUpSteps;

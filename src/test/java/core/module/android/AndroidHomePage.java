@@ -1,7 +1,7 @@
-package core.model.android;
+package core.module.android;
 
-import core.model.android.common.MenuBar;
-import core.model.common.HomePage;
+import core.module.android.common.MenuBar;
+import core.module.common.HomePage;
 import core.utils.hellper.AppiumHelper;
 
 public class AndroidHomePage extends AppiumHelper implements HomePage {

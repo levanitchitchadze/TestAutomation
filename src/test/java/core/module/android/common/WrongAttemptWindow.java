@@ -1,4 +1,4 @@
-package core.model.android.common;
+package core.module.android.common;
 
 import core.utils.hellper.AppiumHelper;
 import lombok.extern.slf4j.Slf4j;

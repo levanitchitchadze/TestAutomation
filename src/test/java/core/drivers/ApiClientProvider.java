@@ -1,6 +1,6 @@
 package core.drivers;
 
-import core.data.HomeData;
+import core.data.BaseData;
 import io.restassured.specification.RequestSpecification;
 import lombok.extern.slf4j.Slf4j;
 
@@ -10,22 +10,28 @@ import static io.restassured.RestAssured.given;
 public class ApiClientProvider implements IDriverProvider<RequestSpecification> {
 
     private static RequestSpecification client;
+    private BaseData baseData = new BaseData();
 
 
     @Override
-    public RequestSpecification getDriver() {
-        if (client == null) {
-            create();
-        }
+    public RequestSpecification restart() {
+        client = null;
+        create();
         return client;
     }
 
+    @Override
+    public RequestSpecification getDriver() {
+
+        create();
+        return client;
+    }
 
     @Override
     public void create() {
         client = given()
-                .baseUri(HomeData.BASE_URL)
-                .header("Content-Type", "application/json")
+                .baseUri(baseData.getBASE_URL())
+                .headers(baseData.getAPI_DEFAULT_HEADERS())
                 .log()
                 .all();
 
@@ -34,13 +40,6 @@ public class ApiClientProvider implements IDriverProvider<RequestSpecification> 
     @Override
     public void close() {
 
-    }
-
-    @Override
-    public Object restart() {
-        client = null;
-        create();
-        return client;
     }
 
 }

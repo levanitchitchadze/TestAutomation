@@ -1,8 +1,8 @@
-package core.model.android;
+package core.module.android;
 
-import core.model.android.common.HasWrongAttemptWindow;
-import core.model.android.common.WrongAttemptWindow;
-import core.model.common.OTPPage;
+import core.module.android.common.HasWrongAttemptWindow;
+import core.module.android.common.WrongAttemptWindow;
+import core.module.common.OTPPage;
 import core.utils.hellper.AppiumHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.NotFoundException;
