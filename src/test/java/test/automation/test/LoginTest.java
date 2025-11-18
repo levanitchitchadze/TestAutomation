@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
-//    There are login tests I want to run, each method has a meaningful name, so just read :d
+//    There are login tests I want to run, each method has a meaningful name, so just read, please :d
 public class LoginTest extends TestBase {
 
 
