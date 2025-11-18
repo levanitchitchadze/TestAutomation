@@ -11,7 +11,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
 
+//I use lombok It's very helpfull so you will find this anotations everywere 
 @Slf4j
+// This is LoginDefinition class for FE-001_login.feature.
 public class LoginDefinition extends TestBase {
 
     LoginSteps loginSteps;

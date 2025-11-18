@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+// This is UserAPIDefinition class for FE-004_userAPI.feature. It's not done 
 public class UserAPIDefinition extends TestBase {
 
     @Given("User have right permissions")

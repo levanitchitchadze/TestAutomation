@@ -12,6 +12,7 @@ import net.datafaker.Faker;
 
 import static core.data.OTPData.lastOTPCode;
 
+// This is OTPDefinition class for FE-002_otp.feature.
 public class OTPDefinition extends TestBase {
     private OTPSteps otpSteps;
     private OTPData otpData;
