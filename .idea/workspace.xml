@@ -5,51 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="920f9a61-8e90-4d0e-85ac-a1e914a82eab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/users/LoginModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/feature/FE-001_login.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/feature/FE-002_otp.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/feature/FE-003_home.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/feature/FE-004_userAPI.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/stepDefinition/HomeDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/stepDefinition/LoginDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/stepDefinition/OTPDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/stepDefinition/UserAPIDefinition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/base/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/config/android/PhysicalDeviceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/config/android/PhysicalDeviceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/config/android/VirtualDeviceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/config/android/VirtualDeviceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/MenuBarData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/MenuBarData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidDriverProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidDriverProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidLoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidOTPPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidOTPPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/module/android/common/MenuBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/common/MenuBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/runners/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/runners/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidHomeSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidHomeSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidLoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidLoginSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidOTPSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidOTPSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiLoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiLoginSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiOTPSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiOTPSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/api/UsersSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/UsersSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/common/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/common/LoginSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/common/OTPSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/common/OTPSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/hellper/AppiumHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/hellper/AppiumHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/messages/output/cucumber/ThenMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/messages/output/cucumber/ThenMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/messages/output/error/TestFailMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/messages/output/error/TestFailMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/regex/MatcherRegexes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/regex/MatcherRegexes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/validation/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/validation/Validator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/log/appium/appium.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/log/appium/appium.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/HomeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/test/HomeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/test/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/MobileTopUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/test/MobileTopUpTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/OTPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/test/OTPTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/UsersAPITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/test/UsersAPITest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/home.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/login.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/otp.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
