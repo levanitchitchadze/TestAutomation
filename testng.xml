@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-
+<!-- There is suit for Functional tests it can have Web,IOS tests also -->
 <suite name="TBC" parallel="test" Thread-count="2">
 
     <test name="android" preserve-order="true">
+    <!-- This parameter "platform" is very importent it need to have every test block -->
         <parameter name="platform" value="android"/>
         <classes name="AuthenticationAndroid">
             <class name="test.automation.test.LoginTest"/>
