@@ -1,4 +1,4 @@
-package test.automation;
+package test.automation.test;
 
 
 import core.base.TestBase;
@@ -7,19 +7,30 @@ import core.data.UsersData;
 import core.model.users.CreateUserRequest;
 import core.steps.api.UsersSteps;
 import io.restassured.response.Response;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 //It's not very to connect ReqRes.in api to TBC mobile bank application so I decided to create this class
 //just for different steps and controllers
 public class UsersAPITest extends TestBase {
 
-    private final UsersSteps usersSteps = new UsersSteps();
-    private final UsersData usersData = new UsersData();
-    private final TestDataClass testDataClass = new TestDataClass();
-    private final CreateUserRequest createUserRequest = new CreateUserRequest();
+    private UsersSteps usersSteps;
+    private UsersData usersData;
+    private TestDataClass testDataClass;
+    private CreateUserRequest createUserRequest;
     private String userId;
 
-    //    @Test
+    @BeforeClass
+    void setUpUserAPITest() {
+        usersSteps = new UsersSteps();
+        usersData = new UsersData();
+        testDataClass = new TestDataClass();
+        createUserRequest = new CreateUserRequest();
+
+        usersSteps.checkUserPermissions();
+    }
+
+    @Test
     void getUsers() {
 
         for (int pageNumber : usersData.getPAGE_NUMBERS()) {

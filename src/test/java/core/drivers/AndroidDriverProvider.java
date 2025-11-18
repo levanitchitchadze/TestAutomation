@@ -78,7 +78,10 @@ public class AndroidDriverProvider implements IDriverProvider<AndroidDriver> {
         capabilities.setCapability("appPackage", deviceConfig.getAPP_PACKAGE());
 //        also we need to run package, so I set activity name
         capabilities.setCapability("appActivity", deviceConfig.getAPP_ACTIVITY());
+//        If main activity changed program will not crash and takes new activity
+//        capabilities.setCapability("appWaitActivity", deviceConfig.getAPP_WAIT_ACTIVITY());
 
+//        capabilities.setCapability("appWaitForLaunch", false);
 
 //        I can download .apk or .ipa file and run to emulator.
 //        I don't have Macbook so not actually can run .ipa file:D

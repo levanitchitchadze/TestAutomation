@@ -1,11 +1,13 @@
-package core.runners;
+package test.automation.runners;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        features = "src/test/resources/features",
-        glue = {"test.automation", "core.steps.android", "core.steps.ios", "core.steps.api", "core.steps.web", "core.drivers", "core.config.cucumber"},
+        features = "src/test/java/test/automation/feature",
+        glue = {
+                "test/automation/stepDefinition",
+        },
         plugin = {
                 "pretty",
                 "html:cucumber-reports/cucumber-pretty.html",
@@ -13,4 +15,5 @@ import io.cucumber.testng.CucumberOptions;
         }
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
+
 }

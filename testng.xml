@@ -1,42 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 
-<suite name="app" parrallel="test" Thread-count="2">
+<suite name="TBC" parallel="test" Thread-count="2">
 
-    <!--    <test name="android" preserve-order="true">-->
-    <!--        <parameter name="platform" value="android"/>-->
-    <!--        <classes name="AuthenticationAndroid">-->
-    <!--            <class name="test.automation.LoginTest"/>-->
-    <!--            <class name="test.automation.OTPTest"/>-->
-    <!--            <class name="test.automation.HomeTest"/>-->
-    <!--            &lt;!&ndash;            <class name="core.runners.TestRunner"/>&ndash;&gt;-->
-    <!--        </classes>-->
-    <!--    </test>-->
+    <test name="android" preserve-order="true">
+        <parameter name="platform" value="android"/>
+        <classes name="AuthenticationAndroid">
+            <class name="test.automation.test.LoginTest"/>
+            <class name="test.automation.test.OTPTest"/>
+            <class name="test.automation.test.HomeTest"/>
+        </classes>
+    </test>
 
     <test name="api">
         <parameter name="platform" value="api"/>
         <classes name="AuthenticationAndroid">
-            <class name="test.automation.UsersAPITest"/>
+            <class name="test.automation.test.UsersAPITest"/>
         </classes>
     </test>
 
-    <!--    <test name="ios">-->
-    <!--        <parameter name="platform" value="ios"/>-->
-    <!--        <classes name="AuthenticationIOS">-->
-    <!--            <class name="test.automation.LoginTest"/>-->
-    <!--            <class name="core.utils.messages.input.MessageReader"/>-->
-    <!--        </classes>-->
-    <!--    </test>-->
-    <!--    <test name="web">-->
-    <!--        <parameter name="platform" value="web"/>-->
-    <!--        <classes name="AuthenticationWeb">-->
-    <!--            <class name="test.automation.LoginTest"/>-->
-    <!--        </classes>-->
-    <!--    </test>-->
-    <!--    <test name="api">-->
-    <!--        <parameter name="platform" value="api"/>-->
-    <!--        <classes name="AuthenticationApi">-->
-    <!--            <class name="test.automation.LoginTest"/>-->
-    <!--        </classes>-->
-    <!--    </test>-->
 </suite>

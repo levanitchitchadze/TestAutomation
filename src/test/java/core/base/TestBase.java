@@ -1,11 +1,11 @@
 package core.base;
 
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.Scenario;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NotFoundException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
@@ -16,6 +16,8 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static core.utils.regex.MatcherRegexes.GET_VALUE_INSIDE_QUOTES;
 
 @Slf4j
 public class TestBase {
@@ -33,31 +35,31 @@ public class TestBase {
     }
 
     protected boolean itIsCorrectPage(String[] requiredSelectors, String strategy) {
-        WebDriver webDriver = ctx.getAndroidDriver();
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(maxSecondsOfWait));
+        AndroidDriver androidDriver = ctx.getAndroidDriver();
+        WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(maxSecondsOfWait));
 
         try {
 
             if (strategy.equals("xpath")) {
                 return Arrays.stream(requiredSelectors)
-                        .allMatch(x -> wait.until(ExpectedConditions.visibilityOf(webDriver.findElement(By.xpath(x)))).isDisplayed());
+                        .allMatch(x -> wait.until(ExpectedConditions.visibilityOf(androidDriver.findElement(By.xpath(x)))).isDisplayed());
             } else if (strategy.equals("id")) {
                 return Arrays.stream(requiredSelectors)
-                        .allMatch(id -> wait.until(ExpectedConditions.visibilityOf(webDriver.findElement(AppiumBy.id(id)))).isDisplayed());
+                        .allMatch(id -> wait.until(ExpectedConditions.visibilityOf(androidDriver.findElement(AppiumBy.id(id)))).isDisplayed());
             } else {
                 throw new RuntimeException("invalid Strategy isItCorrectPage method need strategy ex: id, xpath");
             }
 
 
         } catch (NotFoundException nfe) {
-            log.error("Can't find required element for page:" + nfe.getMessage());
+            log.error("Can't find required(" + Arrays.toString(requiredSelectors) + ") element for page:" + nfe.getMessage());
             return false;
         }
     }
 
     public void setUpForCucumber(Scenario scenario) {
 
-        String regex = "\"([^\"]*)\"";
+        String regex = GET_VALUE_INSIDE_QUOTES;
         Matcher matcher = Pattern.compile(regex).matcher(scenario.getName());
         String platform = "";
         if (matcher.find()) {
@@ -72,10 +74,7 @@ public class TestBase {
 
 
     private void setUpDriver(String platform) {
-
         ctx = PlatformContextBuilder.build(platform);
-
-
     }
 
     //    The tearDown method closes the driver no mether what, otherwise it may cause problems for the next run.

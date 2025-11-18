@@ -97,7 +97,7 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
     public void typex(String xpath, String text) {
         WebElement element = waitFor(androidDriver.findElement(AppiumBy.xpath(xpath)));
         element.clear();
-        element.sendKeys(text);
+        if (text.isEmpty()) element.sendKeys(text);
     }
 
     public void type(String id, String text, boolean clearFirst) {
@@ -145,7 +145,7 @@ public class AppiumHelper extends TestBase implements UserInterfaceHelper {
             WebElement element = androidDriver.findElement(AppiumBy.id(id));
             return !element.isDisplayed();
         } catch (NotFoundException nfe) {
-            log.info("Not found element: " + nfe.getMessage());
+            log.info("Not displayed element: " + nfe.getMessage());
         }
 
         return true;

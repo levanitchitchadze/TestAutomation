@@ -6,6 +6,7 @@ public interface MatcherRegexes {
 
     String TBC_SMS_OTP_MESSAGES_REGEX = "\\b(\\d{4,8})\\b";
     String UNIX_TIME_REGEX = "(?<=date=)\\d{12,15}";
+    String GET_VALUE_INSIDE_QUOTES = "\"([^\"]*)\"";
 
 
 }

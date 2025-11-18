@@ -11,7 +11,7 @@ import org.openqa.selenium.NotFoundException;
 public class AndroidOTPPage extends AppiumHelper implements HasWrongAttemptWindow, OTPPage {
 
     private final String OTP_INPUT = "com.icomvision.bsc.tbc:id/payment_authorization_content";
-    private final String RESEND_BTN = "com.icomvision.bsc.tbc:id/flResendWrapper";
+    private final String RESEND_BTN = "com.icomvision.bsc.tbc:id/payment_request_new_token";
     private final String ALTERNATIVE_RESEND_BTN = "com.icomvision.bsc.tbc:id/ivResend";
     private final String SUBMIT_BTN = "com.icomvision.bsc.tbc:id/btTwoFactorConfirm";
     private final String TITLE = "com.icomvision.bsc.tbc:id/tvTitle";
@@ -25,7 +25,7 @@ public class AndroidOTPPage extends AppiumHelper implements HasWrongAttemptWindo
     public boolean itIsOTPPage() {
 
 
-        String[] otpPageRequiredElements = new String[]{OTP_INPUT, SUBMIT_BTN, TITLE};
+        String[] otpPageRequiredElements = new String[]{OTP_INPUT, SUBMIT_BTN};
         return itIsCorrectPage(otpPageRequiredElements, "id");
     }
 
@@ -33,24 +33,22 @@ public class AndroidOTPPage extends AppiumHelper implements HasWrongAttemptWindo
     public void enterOtpCode(String otpCode) {
 
         try {
+            wrongAttemptValidation(true);
 
             type(OTP_INPUT, otpCode);
             click(SUBMIT_BTN);
         } catch (NotFoundException nfe) {
-            log.error("Can't find OTP code element: " + nfe.getMessage());
-            throw new RuntimeException("Can't find OTP code element: " + nfe.getMessage());
+            log.error("Can't find OTP code input/submit element: " + nfe.getMessage());
+            throw new RuntimeException("Can't find OTP code input/submit element: " + nfe.getMessage());
         }
 
 
     }
 
     public void resendOTPCode() {
-        try {
-            click(RESEND_BTN);
-        } catch (NotFoundException nfe) {
-            log.error("Can't found OTP resend button: " + nfe.getMessage());
-            throw new RuntimeException("Can't found OTP resend button: " + nfe.getMessage());
-        }
+
+        click(RESEND_BTN);
+
     }
 
 

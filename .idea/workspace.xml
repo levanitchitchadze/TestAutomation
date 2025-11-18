@@ -5,91 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="920f9a61-8e90-4d0e-85ac-a1e914a82eab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/data/BaseData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/data/UsersData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/enums/HTTP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/users/CreateUserRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/module/api/ApiHomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/module/api/ApiMobileTopUpPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/module/api/UsersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiLoginSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiMobileTopUpSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiOTPSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/UsersSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/common/LoginSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/common/MobileTopUpSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/steps/common/OTPSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/utils/api/APIRequestBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/utils/regex/MatcherRegexes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/utils/url/PathBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/utils/url/QueryBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/utils/url/RequestBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/UsersAPITest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/model/users/LoginModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/feature/FE-001_login.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/feature/FE-002_otp.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/feature/FE-003_home.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/feature/FE-004_userAPI.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/stepDefinition/HomeDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/stepDefinition/LoginDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/stepDefinition/OTPDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/automation/stepDefinition/UserAPIDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/base/IPlatformAbstractFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/IPlatformAbstractFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/base/PlatformContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/PlatformContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/base/PlatformContextBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/PlatformContextBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/base/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/base/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/TestDataClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/TestDataClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/android/HomeData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/HomeData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/android/MenuBarData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/MenuBarData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/android/OTPData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/OTPData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/api/BaseData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/config/android/PhysicalDeviceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/config/android/PhysicalDeviceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/config/android/VirtualDeviceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/config/android/VirtualDeviceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/data/MenuBarData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/data/MenuBarData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidDriverProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/AndroidDriverProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/drivers/ApiClientProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/drivers/ApiClientProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/AndroidFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/AndroidFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/ApiFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/ApiFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/pages/ApiPagesFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/pages/HomePagesFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/pages/IosPagesFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/pages/PageFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/pages/WebPagesFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/steps/ApiStepsFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/steps/HomeStepsFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/steps/IosStepsFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/steps/StepsFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/steps/WebStepsFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/AndroidHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/AndroidLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidLoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/AndroidMobileTopUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidMobileTopUpPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/AndroidOTPPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidOTPPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/common/HasWrongAttemptWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/common/HasWrongAttemptWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/common/MenuBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/common/MenuBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/common/SideBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/common/SideBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/android/common/WrongAttemptWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/common/WrongAttemptWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/api/ApiHomePage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/api/ApiLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/api/ApiLoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/api/ApiMobileTopUpPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/api/ApiOTPPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/api/ApiOTPPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/common/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/common/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/common/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/common/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/common/MobileTopUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/common/MobileTopUpPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/model/common/OTPPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/common/OTPPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidLoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidOTPPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/AndroidOTPPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/module/android/common/MenuBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/module/android/common/MenuBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/runners/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/runners/TestRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidHomeSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidHomeSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidLoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidLoginSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidOTPSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidOTPSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/MobileTopUpSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/android/AndroidMobileTopUpSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/android/PaymentSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiHomeSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiHomeSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/api/LoginSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/api/OTPSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/api/PaymentStep.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/common/HomeSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/common/HomeSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/common/ILoginSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/common/IPaymentSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/ios/LoginSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/ios/PaymentSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/web/LoginSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/web/PaymentSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/hellper/APIHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiLoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiLoginSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiOTPSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/ApiOTPSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/api/UsersSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/api/UsersSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/common/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/common/LoginSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/steps/common/OTPSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/steps/common/OTPSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/hellper/AppiumHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/hellper/AppiumHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/messages/input/MessageReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/messages/input/MessageReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/messages/output/cucumber/ThenMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/messages/output/cucumber/ThenMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/messages/output/error/TestFailMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/messages/output/error/TestFailMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/regex/MatcherRegexes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/regex/MatcherRegexes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/validation/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/validation/Validator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/log/appium/appium.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/log/appium/appium.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/HomeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/HomeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/MobileTopUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/MobileTopUpTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/OTPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/OTPTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/HomeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/test/HomeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/test/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/MobileTopUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/test/MobileTopUpTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/OTPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/test/OTPTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/automation/UsersAPITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/automation/test/UsersAPITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/home.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/login.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/otp.feature" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -173,6 +132,8 @@
     "TestNG.TestAsync.reactiveStreamsCreation.executor": "Run",
     "TestNG.TestAsync.testArrays.executor": "Run",
     "TestNG.TestAsync.threadCreation.executor": "Run",
+    "TestNG.TestRunner (1).executor": "Run",
+    "TestNG.TestRunner.executor": "Run",
     "TestNG.WebAppTests (1).executor": "Run",
     "TestNG.WebAppTests.executor": "Run",
     "TestNG.otpTest.executor": "Run",
@@ -199,11 +160,11 @@
       <recent name="$PROJECT_DIR$/src/test/java/core/model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java/test/automation/feature" />
+      <recent name="$PROJECT_DIR$/src/test/java/test/automation/" />
+      <recent name="$PROJECT_DIR$/src/test/java/test/automation/test" />
       <recent name="$PROJECT_DIR$/src/test/java/log/appium" />
       <recent name="$PROJECT_DIR$/.github/workflows" />
-      <recent name="$PROJECT_DIR$/src/test" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/test/java/test/automation/app_test" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="core.config" />
@@ -217,53 +178,19 @@
       <recent name="test.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG./home/levan/Documents/GitHub/Portfolio/Portfolio/testng.xml">
+  <component name="RunManager" selected="TestNG.TestRunner (1)">
     <configuration name="HomeTest.checkIfEmulatorRunning" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Portfolio" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.automation.*" />
+          <option name="PATTERN" value="test.automation.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.automation" />
-      <option name="MAIN_CLASS_NAME" value="test.automation.HomeTest" />
+      <option name="MAIN_CLASS_NAME" value="test.automation.test.HomeTest" />
       <option name="METHOD_NAME" value="checkIfEmulatorRunning" />
       <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Portfolio" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.automation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.automation" />
-      <option name="MAIN_CLASS_NAME" value="test.automation.LoginTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestAsync" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Portfolio" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.automation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.automation" />
-      <option name="MAIN_CLASS_NAME" value="test.automation.TestAsync" />
-      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -274,7 +201,7 @@
       <module name="Portfolio" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.automation.*" />
+          <option name="PATTERN" value="test.automation.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -282,6 +209,40 @@
       <option name="MAIN_CLASS_NAME" value="test.automation.TestAsync" />
       <option name="METHOD_NAME" value="testArrays" />
       <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRunner (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Portfolio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.automation.runners.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.automation.runners" />
+      <option name="MAIN_CLASS_NAME" value="test.automation.runners.TestRunner" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRunner" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Portfolio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="core.runners.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="core.runners" />
+      <option name="MAIN_CLASS_NAME" value="core.runners.TestRunner" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -333,18 +294,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.testng" />
-      <item itemvalue="TestNG.LoginTest" />
+      <item itemvalue="TestNG.TestRunner" />
+      <item itemvalue="TestNG.TestRunner (1)" />
       <item itemvalue="TestNG.HomeTest.checkIfEmulatorRunning" />
-      <item itemvalue="TestNG.TestAsync" />
       <item itemvalue="TestNG.TestAsync.testArrays" />
       <item itemvalue="TestNG./home/levan/Documents/GitHub/Portfolio/Portfolio/testng.xml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestRunner (1)" />
+        <item itemvalue="TestNG.TestRunner" />
         <item itemvalue="TestNG./home/levan/Documents/GitHub/Portfolio/Portfolio/testng.xml" />
         <item itemvalue="TestNG.HomeTest.checkIfEmulatorRunning" />
         <item itemvalue="TestNG.TestAsync.testArrays" />
-        <item itemvalue="TestNG.TestAsync" />
       </list>
     </recent_temporary>
   </component>
@@ -377,6 +339,16 @@
           <url>file://$PROJECT_DIR$/test_automation/src/main/java/test/automation/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/core/steps/android/AndroidLoginSteps.java</url>
+          <line>101</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/test/automation/stepDefinition/OTPDefinition.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

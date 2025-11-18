@@ -1,4 +1,4 @@
-package test.automation;
+package test.automation.test;
 
 import core.base.TestBase;
 import core.data.HomeData;
@@ -21,7 +21,6 @@ public class HomeTest extends TestBase {
 
     @Test(dependsOnGroups = {"otpPositive"})
     void moveToMenuBarPages() {
-
 
         homeSteps.navigateToAllPage();
     }

@@ -123,28 +123,82 @@
     </dependencies>
 
 
-    <build>
-        <!--        Here I have build parameters. maven will take classes from this path-->
-        <testSourceDirectory>src/test/java</testSourceDirectory>
+    <!--    <build>-->
+    <!--        &lt;!&ndash;        Here I have build parameters. maven will take classes from this path&ndash;&gt;-->
+    <!--        <testSourceDirectory>src/test/java</testSourceDirectory>-->
 
+    <!--        <plugins>-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                <artifactId>maven-surefire-plugin</artifactId>-->
+    <!--                <version>3.2.5</version>-->
+    <!--                <configuration>-->
+
+    <!--                    &lt;!&ndash;And there is classes, which I want to execute&ndash;&gt;-->
+    <!--                    &lt;!&ndash;It will execute every java file which ends with Test, Tests or Runner &ndash;&gt;-->
+    <!--                    <includes>-->
+    <!--                        <include>**/*Test.java</include>-->
+    <!--                        <include>**/*Tests.java</include>-->
+    <!--                        <include>**/*Runner.java</include>-->
+    <!--                    </includes>-->
+    <!--                </configuration>-->
+    <!--            </plugin>-->
+    <!--        </plugins>-->
+    <!--    </build>-->
+
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
-                <configuration>
-
-                    <!--And there is classes, which I want to execute-->
-                    <!--It will execute every java file which ends with Test, Tests or Runner -->
-                    <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/*Tests.java</include>
-                        <include>**/*Runner.java</include>
-                    </includes>
-                </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+
+        <!-- TestNG Profile -->
+        <profile>
+            <id>testng</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.2.5</version>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>testng.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                            <testNGArtifactName>org.testng:testng</testNGArtifactName>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+
+        <!-- Cucumber Profile -->
+        <profile>
+            <id>cucumber</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.2.5</version>
+                        <configuration>
+                            <includes>
+                                <include>**/TestRunner.java</include>
+                            </includes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
 
 
 </project>

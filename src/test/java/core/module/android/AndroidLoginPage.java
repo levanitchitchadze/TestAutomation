@@ -43,7 +43,6 @@ public class AndroidLoginPage extends AppiumHelper implements HasWrongAttemptWin
 
 
     public void acceptNotifications(boolean allow) {
-        switchTo();
         if (isNotDisplayed(NOTIFICATION_DENY_BTN, 3)) return;
 
         if (allow) click(NOTIFICATION_ALLOW_BTN);

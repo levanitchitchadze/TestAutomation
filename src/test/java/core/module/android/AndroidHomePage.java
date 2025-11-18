@@ -8,15 +8,11 @@ public class AndroidHomePage extends AppiumHelper implements HomePage {
 
 
     private final String ENTER_EASILY_TITLE = "com.icomvision.bsc.tbc:id/tvTitle";
-    private final String ENTER_EASILY_TITLE_TEXT = "შედი მარტივად";
-    private final String ENTER_EASILY_LATER_BTN = "com.icomvision.bsc.tbc:id/btRemindMeLater";
-    private final String ENTER_EASILY_ACTIVATE_BTN = "com.icomvision.bsc.tbc:id/btActivateFingerprint";
-    private final String MANAGE_ACCOUNTS_WINDOW_TITLE = "//android.widget.TextView[@text=\"მართე ანგარიშები\"]";
-    private final String MANAGE_ACCOUNTS_WINDOW_BTN = "//android.widget.ScrollView/android.view.View/android.view.View[2]/android.view.View";
+    private final String HEADER_TOOL_BAR = "com.icomvision.bsc.tbc:id/toolbar";
+    private final String ADD_PIN_DO_NEVER_ASK_AGAIN_BTN = "com.icomvision.bsc.tbc:id/btDontAskAgain";
+    private final String MAKE_DEVICE_TRUSTED_NEVER_ASK_AGAIN_BTN = "com.icomvision.bsc.tbc:id/btDontAskAgain";
 
-    private final String CARDS_VIEW = "//androidx.compose.ui.platform.ComposeView[@resource-id=\"com.icomvision.bsc.tbc:id/compose_view\"]/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View[1]/android.view.View/android.view.View";
-
-    private final String AVAILABLE_AMOUNT_TEXT = "//*[@resource-id=\"com.icomvision.bsc.tbc:id/compose_view\"]//*[@text=\"ხელმისაწვდომი\"]";
+    private final String AVAILABLE_AMOUNT_TEXT = "com.icomvision.bsc.tbc:id/cvAmountView";
 
 
     private MenuBar menuBar = new MenuBar();
@@ -24,9 +20,8 @@ public class AndroidHomePage extends AppiumHelper implements HomePage {
     private String currentPageName = "home";
 
     public boolean itIsHomePage() {
-        String[] loginPageRequiredElements = new String[]{CARDS_VIEW, AVAILABLE_AMOUNT_TEXT};
-//        return itIsCorrectPage(loginPageRequiredElements, "xpath");
-        return true;
+        String[] loginPageRequiredElements = new String[]{HEADER_TOOL_BAR, AVAILABLE_AMOUNT_TEXT};
+        return itIsCorrectPage(loginPageRequiredElements, "id");
     }
 
 
@@ -35,13 +30,24 @@ public class AndroidHomePage extends AppiumHelper implements HomePage {
     }
 
     public boolean navigateToPagesAndBack(String[] pages) {
+
         for (String page : pages) {
             boolean move = menuBar.moveTo(page, currentPageName);
+
             boolean back = menuBar.back();
+
             if (!move || !back) return false;
+
         }
 
         return true;
     }
+
+
+    public void closeExtraWindows() {
+        if (isDisplayed(ADD_PIN_DO_NEVER_ASK_AGAIN_BTN)) click(ADD_PIN_DO_NEVER_ASK_AGAIN_BTN);
+        if (isDisplayed(MAKE_DEVICE_TRUSTED_NEVER_ASK_AGAIN_BTN)) click(MAKE_DEVICE_TRUSTED_NEVER_ASK_AGAIN_BTN);
+    }
+
 
 }

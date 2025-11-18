@@ -1,14 +1,13 @@
-package test.automation;
+package test.automation.test;
 
 import core.base.TestBase;
 import core.data.LoginData;
 import core.enums.Language;
+import core.model.users.LoginModel;
 import core.steps.android.AndroidLoginSteps;
 import core.utils.messages.output.error.TestFailMessages;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import static core.utils.messages.output.cucumber.ThenMessages.WRONG_ATTEMPT_WINDOW_SHOULD_BE_DISPLAYED;
 
 
 //    There are login tests I want to run, each method has a meaningful name, so just read :d
@@ -17,6 +16,7 @@ public class LoginTest extends TestBase {
 
     private AndroidLoginSteps loginSteps;
     private LoginData loginData;
+    private LoginModel loginModel;
 
     @BeforeClass
     void setUpLoginTest() {
@@ -42,31 +42,38 @@ public class LoginTest extends TestBase {
     @Test(dependsOnMethods = {"closePopups"}, groups = {"loginNegative", "login"})
     void loginWithIncorrectUsername() {
 
-        loginSteps.login(loginData.getIncorrectUsername(), loginData.getPassword());
-        loginSteps.wrongAttemptWindowValidation(WRONG_ATTEMPT_WINDOW_SHOULD_BE_DISPLAYED);
+        loginSteps.setUsername(loginData.getIncorrectUsername());
+        loginSteps.setPassword(loginData.getPassword());
+        loginSteps.login();
+        loginSteps.wrongAttemptWindowValidation(true);
 
     }
 
     @Test(dependsOnMethods = {"closePopups"}, groups = {"loginNegative", "login"})
     void loginWithIncorrectPassword() {
         //User may lock so I use incorrect username :d
-        loginSteps.login(loginData.getIncorrectUsername(), loginData.getIncorrectPassword());
-        loginSteps.wrongAttemptWindowValidation(WRONG_ATTEMPT_WINDOW_SHOULD_BE_DISPLAYED);
+
+        loginSteps.setUsername(loginData.getIncorrectUsername());
+        loginSteps.setPassword(loginData.getIncorrectPassword());
+        loginSteps.login();
+        loginSteps.wrongAttemptWindowValidation(true);
 
     }
 
     @Test(dependsOnMethods = {"closePopups"}, groups = {"loginNegative", "login"})
     void loginWithIncorrectCredentials() {
-
-        loginSteps.login(loginData.getIncorrectUsername(), loginData.getIncorrectPassword());
-        loginSteps.wrongAttemptWindowValidation(WRONG_ATTEMPT_WINDOW_SHOULD_BE_DISPLAYED);
+        loginSteps.setUsername(loginData.getIncorrectUsername());
+        loginSteps.setPassword(loginData.getIncorrectPassword());
+        loginSteps.login();
+        loginSteps.wrongAttemptWindowValidation(true);
 
     }
 
     @Test(dependsOnGroups = {"loginNegative"}, groups = {"login"}, alwaysRun = true)
     void loginSuccessfully() {
-
-        boolean isLoginSuccessfully = loginSteps.login(loginData.getUsername(), loginData.getPassword());
+        loginSteps.setUsername(loginData.getUsername());
+        loginSteps.setPassword(loginData.getPassword());
+        boolean isLoginSuccessfully = loginSteps.login();
 
         assert isLoginSuccessfully : TestFailMessages.LOGIN_SUCCESSFULLY;
     }

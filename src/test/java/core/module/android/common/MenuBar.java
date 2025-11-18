@@ -31,9 +31,8 @@ public class MenuBar extends AppiumHelper {
 
 
     private void changePage(String pageName) {
-        if (pageSelectors == null) fillDict();
+        if (pageSelectors.isEmpty()) fillDict();
         try {
-            System.out.println(pageSelectors.get(pageName.toLowerCase()));
             click(pageSelectors.get(pageName.toLowerCase()));
 
         } catch (NotFoundException nfe) {

@@ -4,6 +4,6 @@ import lombok.Getter;
 
 @Getter
 public class MenuBarData {
-    private final String[] BOTTOM_MENU_PAGE_OPTIONS = {"home", "transfers", "products", "bills", "mobile"};
+    private final String[] BOTTOM_MENU_PAGE_OPTIONS = {"home", "transfers", "mobile", "products", "bills"};
 
 }
