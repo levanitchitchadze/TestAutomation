@@ -10,7 +10,7 @@ import io.restassured.response.Response;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-//It's not very to connect ReqRes.in api to TBC mobile bank application so I decided to create this class
+//It's not very handy to connect ReqRes.in api to TBC mobile bank application so I decided to create this class
 //just for different steps and controllers
 public class UsersAPITest extends TestBase {
 
